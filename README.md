@@ -5,7 +5,7 @@ These dotfiles are managed with `stow`
 
 ```shell
 cd ~
-git clone /<this repo/>
+git clone <this repo>
 cd ~/dotfiles
 
 stow conky
