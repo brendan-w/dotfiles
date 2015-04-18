@@ -1,0 +1,18 @@
+[global_config]
+focus = system
+use_custom_url_handler = True
+custom_url_handler = firefox
+
+[keybindings]
+full_screen = <Ctrl><Shift>F11
+
+[profiles]
+[[default]]
+
+font = Fixed 10
+show_titlebar = False
+background_color = "#000000"
+foreground_color = "#FFFFFF"
+scrollback_lines = '1000'
+cursor_blink = False
+cursor_color = "#FFFFFF"
