@@ -1,5 +1,5 @@
 function extract --description 'decompresses various archives'
-	
+
 	for file in $argv
 
 		if [ -f $file ]

@@ -55,7 +55,7 @@
 
   <item label="Openbox menu.xml">
     <action name="Execute">
-      <command>sublime_text ~/.config/openbox/menu.xml</command>
+      <command>sublime ~/.config/openbox/menu.xml</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -64,7 +64,7 @@
 
   <item label="Openbox rc.xml">
     <action name="Execute">
-      <command>sublime_text ~/.config/openbox/rc.xml</command>
+      <command>sublime ~/.config/openbox/rc.xml</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -90,7 +90,7 @@
   </item>
   <item label="Tint2 rc.xml">
     <action name="Execute">
-      <command>sublime_text ~/.config/tint2/tint2rc</command>
+      <command>sublime ~/.config/tint2/tint2rc</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -169,7 +169,7 @@
   </item>
   <item label="Sublime">
     <action name="Execute">
-      <command>sublime_text</command>
+      <command>sublime</command>
         <enabled>yes</enabled>
     </action>
   </item>
