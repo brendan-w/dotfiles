@@ -8,6 +8,7 @@ alias grep='grep --color=tty -d skip'
 alias gl="git log"
 alias gs="git status"
 alias gd="git diff"
+alias gds="git diff --stat"
 alias gb="git branch"
 alias gt="git log --graph --simplify-by-decoration --pretty=format:'%d' --all"
 alias gap="git add -p"
