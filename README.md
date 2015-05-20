@@ -14,3 +14,4 @@ stow terminator
 ...
 ```
 
+The `.templates` directory is not meant to be deployed with `stow`, but rather, with the `mkproj.fish` script
