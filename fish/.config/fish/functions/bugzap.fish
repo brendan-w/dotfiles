@@ -1,7 +1,7 @@
 function bugzap --description "deletes temporary files from other OS's"
 
 	# set these
-	set directories ".fseventsd" ".Spotlight-V100" ".Trash-1000" ".Trashes"
+	set directories ".fseventsd" ".Spotlight-V100" ".Trash-1000" ".Trashes" ".Sugar-Metadata"
 	set files "._.Trashes" ".DS_Store" "Thumbs.db"
 
 
