@@ -1,6 +1,9 @@
 [user]
 	email = brendanw@windworksdesign.com
 	name = Brendan Whitfield
+[alias]
+    wipe = !git reset --hard && git clean -fd
+
 [Color]
     [color "branch"]
         current = green
