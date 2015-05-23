@@ -1,0 +1,12 @@
+[user]
+	email = brendanw@windworksdesign.com
+	name = Brendan Whitfield
+[Color]
+    [color "branch"]
+        current = green
+        local = yellow
+        remote = red
+    [color "status"]
+        added = green
+        changed = yellow
+        untracked = red
