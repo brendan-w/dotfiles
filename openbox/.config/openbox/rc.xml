@@ -524,6 +524,27 @@
         <command>amixer set Master toggle</command>
       </action>
     </keybind>
+    <!-- CMUS controls  -->
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>cmus-remote -u</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>cmus-remote -s</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>cmus-remote -r</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>cmus-remote -n</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
