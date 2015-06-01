@@ -1,6 +1,6 @@
 
 syntax on
-colorscheme monokai
+colorscheme custom
 
 set number
 set showcmd
