@@ -1,8 +1,10 @@
 
+set fish_greeting ""
+
 # --------------- general ---------------
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%d-%m-%Y %H:%M   "'
+alias ll='ls -l'
+alias la='ls -la'
 alias grep='grep -n --color=tty -d skip'
 alias df='df --human-readable'
 alias du='du --human-readable --total'
