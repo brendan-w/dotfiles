@@ -1,10 +1,14 @@
 
+# --------------- general ---------------
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias grep='grep -n --color=tty -d skip'
+alias df='df --human-readable'
+alias du='du --human-readable --total'
 
 
+# --------------- git ---------------
 alias gl="git log"
 alias gs="git status"
 alias gd="git diff"
