@@ -8,6 +8,7 @@ alias la='ls -la'
 alias grep='grep -n --color=tty -d skip'
 alias df='df --human-readable'
 alias du='du --human-readable --total'
+alias hexdump='hexdump -C'
 
 
 # --------------- git ---------------
