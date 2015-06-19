@@ -9,6 +9,7 @@ alias grep='grep -n --color=tty -d skip'
 alias df='df --human-readable'
 alias du='du --human-readable --total'
 alias hexdump='hexdump -C'
+alias tree='tree -C -F'
 
 
 # --------------- git ---------------
