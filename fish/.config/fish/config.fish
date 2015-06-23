@@ -6,6 +6,7 @@ alias ls='ls --human-readable --group-directories-first --color=auto --classify 
 alias ll='ls -l'
 alias la='ls -la'
 alias grep='grep -n --color=tty -d skip'
+alias ag='ag --color-path "38;5;27" --color-line-number "1;38;5;127" --color-match "1;91"'
 alias df='df --human-readable'
 alias du='du --human-readable --total'
 alias hexdump='hexdump -C'
