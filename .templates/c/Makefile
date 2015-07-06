@@ -13,7 +13,7 @@ OBJ     = src/main.o
 # compile settings
 
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -ggdb
+CFLAGS=-std=c99 -Wall -Wextra -pedantic -ggdb
 LIBS=
 
 
