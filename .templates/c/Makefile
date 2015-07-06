@@ -3,12 +3,10 @@
 
 # files and paths
 
-EXE_NAME=a.out
+EXE_NAME = a.out
 
-HEADERS=\
-
-OBJ=\
-	src/main.o
+HEADERS = 
+OBJ     = src/main.o
 
 
 
@@ -29,7 +27,6 @@ $(EXE_NAME): $(OBJ)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 .PHONY: clean
-
 clean:
 	rm -f $(OBJ) $(EXE_NAME)
 
