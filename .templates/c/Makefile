@@ -3,19 +3,17 @@
 
 # files and paths
 
-EXE_NAME=a.out
+EXE_NAME = a.out
 
-HEADERS=\
-
-OBJ=\
-	src/main.o
+HEADERS = 
+OBJ     = src/main.o
 
 
 
 # compile settings
 
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -ggdb
+CFLAGS=-std=c99 -Wall -Wextra -pedantic -ggdb
 LIBS=
 
 
@@ -29,7 +27,6 @@ $(EXE_NAME): $(OBJ)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 .PHONY: clean
-
 clean:
 	rm -f $(OBJ) $(EXE_NAME)
 
