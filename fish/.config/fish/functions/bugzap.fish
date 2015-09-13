@@ -1,4 +1,4 @@
-function bugzap --description "deletes temporary files from other OS's"
+function bugzap --description "deletes temporary files from other OS'"
 
 	# set these
 	set directories ".fseventsd" ".Spotlight-V100" ".Trash-1000" ".Trashes" ".TemporaryItems" ".Sugar-Metadata"
