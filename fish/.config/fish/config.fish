@@ -24,3 +24,7 @@ alias gt="git log --graph --all --pretty=format:'%C(bold yellow)%h%C(reset)%C(bo
 alias gap="git add -p"
 alias gaa="git add --all ; git status"
 alias gco="git checkout"
+
+
+# --------------- env ---------------
+set -gx GCC_COLORS always
