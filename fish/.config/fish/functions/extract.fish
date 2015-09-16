@@ -6,6 +6,7 @@ function extract --description 'decompresses various archives'
 			switch $file
 				case '*.tar.bz2';  tar xjf $file
 				case '*.tar.gz';   tar xzf $file
+				case '*.tar.xz';   tar xf $file
 				case '*.bz2';      bunzip2 $file
 				case '*.rar';      unrar x $file
 				case '*.gz';       gunzip $file
