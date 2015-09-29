@@ -27,4 +27,7 @@ alias gco="git checkout"
 
 
 # --------------- env ---------------
-set -gx GCC_COLORS always
+set -gx GCC_COLORS "always"
+set -gx PAGER "less"
+set -gx EDITOR "vim"
+
