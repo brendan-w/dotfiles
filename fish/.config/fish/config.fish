@@ -31,3 +31,9 @@ set -gx GCC_COLORS "always"
 set -gx PAGER "less"
 set -gx EDITOR "vim"
 
+set -g theme_display_git yes
+set -g theme_display_hg no
+set -g theme_display_virtualenv yes
+set -g theme_display_ruby no
+set -g theme_display_user no
+
