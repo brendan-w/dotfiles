@@ -27,6 +27,7 @@ alias gco="git checkout"
 
 
 # --------------- env ---------------
+set -gx VIRTUALFISH_HOME "$HOME/.virtualenvs" # won't expand ~
 set -gx GCC_COLORS "always"
 set -gx PAGER "less"
 set -gx EDITOR "vim"
@@ -36,4 +37,11 @@ set -g theme_display_hg no
 set -g theme_display_virtualenv yes
 set -g theme_display_ruby no
 set -g theme_display_user no
+
+if python -c 'import virtualfish' > /dev/null 2>&1
+    eval (python -m virtualfish compat_aliases)
+else
+    echo "Virtualfish not found"
+    echo "Install using 'pip install --user virtualfish'"
+end
 
