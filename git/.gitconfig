@@ -3,6 +3,7 @@
 	name = Brendan Whitfield
 [alias]
     wipe = !git reset --hard && git clean -fd
+    unstage = reset --
 
 [Color]
     [color "branch"]
