@@ -2,32 +2,56 @@
 syntax on
 colorscheme custom
 
+set nocompatible
 set number
 set showcmd
-set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
 set expandtab
+set backspace=indent,eol,start
+set encoding=utf-8
+set ruler " cursor coordinates
+set showcmd " show commands as they're begin typed
+set laststatus=2 " always show statusline
+set cursorline cursorcolumn " illuminate the cursors current position
+set noswapfile
+set backupdir=~/.vim/tmp " dump everything in a temp directory
+set directory=~/.vim/tmp
+set undodir  =~/.vim/tmp
+set copyindent
+set ttyfast
 
-" ================ Persistent Undo =================
-" Keep undo history across sessions, by storing in file.
-if version >= 730
-    silent !mkdir ~/.vim/backups > /dev/null 2>&1
-    set undodir=~/.vim/backups
-    set undofile
-endif
+
+" set colorcolumn=80 " illuminates column number X
 
 " ============ Settings for status bar =============
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
-" ====================== Keys ======================
+" ====================== Controls ======================
 imap jj <Esc>
 
+" line swapping
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" In many terminal emulators the mouse works just fine, so I enable it.
+if has('mouse')
+    set mouse=a
+endif
+
+
+" ==================== Vundle ======================
+
+call plug#begin('~/.vim/plugged')
+
+" Plug 'bling/vim-airline'
+
+call plug#end()
 
