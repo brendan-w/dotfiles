@@ -15,7 +15,7 @@ set encoding=utf-8
 set ruler " cursor coordinates
 set showcmd " show commands as they're begin typed
 set laststatus=2 " always show statusline
-set cursorline cursorcolumn " illuminate the cursors current position
+set cursorline " illuminate the cursors current position
 set noswapfile
 set backupdir=~/.vim/tmp " dump everything in a temp directory
 set directory=~/.vim/tmp
@@ -51,6 +51,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'jiangmiao/auto-pairs'
 " Plug 'bling/vim-airline'
 
 call plug#end()
