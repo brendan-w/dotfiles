@@ -3,8 +3,8 @@ syntax on
 colorscheme custom
 
 set nocompatible
-set number
-set showcmd
+set number " show line numbers
+set showcmd " show me commands as I type them
 set softtabstop=4
 set shiftwidth=4
 set autoindent
@@ -12,8 +12,7 @@ set smartindent
 set expandtab
 set backspace=indent,eol,start
 set encoding=utf-8
-set ruler " cursor coordinates
-set showcmd " show commands as they're begin typed
+set ruler " show cursor coordinates
 set laststatus=2 " always show statusline
 set cursorline " illuminate the cursors current position
 set noswapfile
@@ -23,13 +22,10 @@ set undodir  =~/.vim/tmp
 set copyindent
 set ttyfast
 set incsearch " search as you type, ENTER will accept, ESC will stop
+set ignorecase smartcase " ignore case when searching, unless there is an uppercase character
 
 
-" set colorcolumn=80 " illuminates column number X
 
-" ============ Settings for status bar =============
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs
 
 " ====================== Controls ======================
 imap jj <Esc>
@@ -48,7 +44,7 @@ if has('mouse')
 endif
 
 
-" ==================== Vundle ======================
+" ==================== vim-plug ======================
 
 call plug#begin('~/.vim/plugged')
 
@@ -57,6 +53,8 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-" be a text editor when you wake up
-startinsert
+" ====================================================
+
+
+startinsert " be a text editor when you wake up
 
