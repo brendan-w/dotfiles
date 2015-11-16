@@ -22,6 +22,7 @@ set directory=~/.vim/tmp
 set undodir  =~/.vim/tmp
 set copyindent
 set ttyfast
+set incsearch " search as you type, ENTER will accept, ESC will stop
 
 
 " set colorcolumn=80 " illuminates column number X
@@ -55,4 +56,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'bling/vim-airline'
 
 call plug#end()
+
+" be a text editor when you wake up
+startinsert
 
