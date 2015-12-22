@@ -67,6 +67,13 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 inoremap <C-d> <C-o>*
 inoremap <A-d> <C-o>#
 
+" use F1 to run a normal command from insert mode
+" also prevent it from openning the help
+nmap <F1> <NOP>
+imap <F1> <C-o>
+vmap <F1> <NOP>
+
+
 " In many terminal emulators the mouse works just fine, so I enable it.
 if has('mouse')
     set mouse=a
