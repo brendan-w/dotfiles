@@ -23,7 +23,7 @@ set copyindent
 set ttyfast
 set incsearch " search as you type, ENTER will accept, ESC will stop
 set ignorecase smartcase " ignore case when searching, unless there is an uppercase character
-
+set whichwrap+=<,>,h,l,[,] " make Left and Right movement keys wrap around the ends of lines
 
 
 
@@ -48,13 +48,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'     " automatically creates the closing paren, bracket, etc...
+Plug 'edsono/vim-matchit'       " allows '%' command to jump between opening/closing HTML tags
+" Plug 'vim-scripts/closetag.vim' " allows 'CTRL-_' to close the currently opened HTML tag
 " Plug 'bling/vim-airline'
 
 call plug#end()
 
 " ====================================================
 
-
-startinsert " be a text editor when you wake up
+" be a text editor when you wake up
+" also, piss off every VIM user who touches my computer
+startinsert
 
