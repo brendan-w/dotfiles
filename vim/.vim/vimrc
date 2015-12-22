@@ -47,7 +47,7 @@ syntax on
 colorscheme molokai
 
 " custom colors
-hi CursorLine ctermbg=0
+hi CursorLine ctermbg=236
 
 " ====================== Controls ======================
 
