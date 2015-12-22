@@ -46,6 +46,9 @@ set t_Co=256 " enable 256 colors
 syntax on
 colorscheme molokai
 
+" custom colors
+hi CursorLine ctermbg=0
+
 " ====================== Controls ======================
 
 " hack, to prevent my ALT key from escaping back to normal mode
