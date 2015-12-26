@@ -13,6 +13,7 @@ alias du='du --human-readable --total'
 alias hexdump='hexdump -C'
 alias tree='tree -C -F'
 alias xx='atool -x'
+alias xl='atool -l'
 
 
 # --------------- git ---------------
