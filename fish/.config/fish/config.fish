@@ -3,8 +3,6 @@ set fish_greeting ""
 
 # --------------- general ---------------
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%d-%m-%Y %H:%M   "'
-alias ll='ls -l'
-alias la='ls -la'
 alias grep='grep -n --color=tty -d skip'
 alias pgrep='pgrep -a'
 alias ag='ag --color-path "38;5;27" --color-line-number "1;38;5;127" --color-match "1;91"'
@@ -40,6 +38,7 @@ set -g theme_display_virtualenv yes
 set -g theme_display_ruby no
 set -g theme_display_user no
 
+# virtual-fish
 if python -c 'import virtualfish' > /dev/null 2>&1
     eval (python -m virtualfish compat_aliases)
 else
