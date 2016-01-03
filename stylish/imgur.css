@@ -1,0 +1,5 @@
+
+@-moz-document url-prefix("http://imgur.com/") {
+  #cta-container-placeholder { display:none !important; }
+  .social { display:none !important; }
+}

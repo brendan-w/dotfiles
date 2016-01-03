@@ -1,0 +1,8 @@
+
+@-moz-document url-prefix("https://www.reddit.com/") {
+  /* explicitly shut off ads and alike */
+  #ad_main { display: none !important; }
+  #ad_sponsorship { display: none !important; }
+  .newsletterbar { display: none !important; }
+  .goldvertisement { display: none !important; }
+}

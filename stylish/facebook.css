@@ -1,0 +1,4 @@
+
+@-moz-document url-prefix("https://www.facebook.com/") {
+  #pagelet_trending_tags_and_topics { display:none !important; }
+}

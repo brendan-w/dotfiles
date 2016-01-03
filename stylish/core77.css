@@ -1,0 +1,8 @@
+
+@-moz-document url-prefix("http://www.core77.com") {
+
+  #blog_topper,
+  #newsletter_signup,
+  .social_btn
+  { display:none !important; }
+}
