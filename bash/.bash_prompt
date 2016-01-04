@@ -1,0 +1,129 @@
+#!/bin/zsh
+#
+# DESCRIPTION:
+#
+#   Set the bash prompt according to:
+#    * the active virtualenv
+#    * the branch/status of the current git repository
+#    * the return value of the previous command
+#    * the fact you just came from Windows and are used to having newlines in
+#      your prompts.
+#
+# USAGE:
+#
+#   1. Save this file as ~/.bash_prompt
+#   2. Add the following line to the end of your ~/.bashrc or ~/.bash_profile:
+#        . ~/.bash_prompt
+#
+# LINEAGE:
+#
+#   Based on work by woods
+#
+#   https://gist.github.com/31967
+
+# The various escape codes that we can use to color our prompt.
+
+       CYAN="\[\033[0;96m\]"
+  LIGHT_RED="\[\033[0;91m\]"
+     YELLOW="\[\033[0;93m\]"
+      GREEN="\[\033[0;32m\]"
+       BLUE="\[\033[0;94m\]"
+ COLOR_NONE="\[\e[0m\]"
+
+
+BASE_COLOR=$CYAN
+
+# Detect whether the current directory is a git repository.
+function is_git_repository {
+  git branch > /dev/null 2>&1
+}
+
+# Determine the branch/state information for this git repository.
+function set_git_branch {
+  # Capture the output of the "git status" command.
+  git_status="$(git status 2> /dev/null)"
+
+  # Set color based on clean/staged/dirty.
+  if [[ ${git_status} =~ "working directory clean" ]]; then
+    state_color="${GREEN}"
+  elif [[ ${git_status} =~ "Changes to be committed" ]]; then
+    state_color="${YELLOW}"
+  else
+    state_color="${LIGHT_RED}"
+  fi
+
+  # Set arrow icon based on status against remote.
+  # remote_pattern="Your branch is (.*) of"
+  # if [[ ${git_status} =~ ${remote_pattern} ]]; then
+  #   if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
+  #     remote="â†‘"
+  #   else
+  #     remote="â†“"
+  #   fi
+  # else
+  #   remote=""
+  # fi
+  # diverge_pattern="Your branch and (.*) have diverged"
+  # if [[ ${git_status} =~ ${diverge_pattern} ]]; then
+  #   remote="â†•"
+  # fi
+
+  # Get the name of the branch.
+  branch_pattern="On branch ([^${IFS}]*)"
+  if [[ ${git_status} =~ ${branch_pattern} ]]; then
+    branch=${BASH_REMATCH[1]}
+  fi
+
+  # Set the final branch string.
+  BRANCH="${BASE_COLOR}[${state_color}${branch}${BASE_COLOR}]${COLOR_NONE} "
+}
+
+# Return the prompt symbol to use, colorized based on the return value of the
+# previous command.
+function prev_result () {
+  if test $1 -eq 0 ; then
+      PREV_RESULT=""
+  else
+      PREV_RESULT="${LIGHT_RED}X${COLOR_NONE}\n"
+  fi
+}
+
+# Determine active Python virtualenv details.
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${BASE_COLOR}(${BLUE}`basename \"$VIRTUAL_ENV\"`${BASE_COLOR})${COLOR_NONE} "
+  fi
+}
+
+function set_info () {
+
+  # Set the PYTHON_VIRTUALENV variable.
+  set_virtualenv
+
+  # Set the BRANCH variable.
+  if is_git_repository ; then
+    set_git_branch
+  else
+    BRANCH=""
+  fi
+  
+
+  INFO="${BRANCH}${PYTHON_VIRTUALENV}"
+}
+
+# Set the full bash prompt.
+function set_bash_prompt () {
+  # Set the PREV_RESULT variable. We do this first so we don't lose the
+  # return value of the last command.
+  prev_result $?
+
+  set_info
+
+  # Set the bash prompt variable.
+  PS1="${PREV_RESULT}${INFO}${BASE_COLOR}[\u@\h \w]${COLOR_NONE}\n\$ "
+}
+
+# Tell bash to execute this function just before displaying its prompt.
+PROMPT_COMMAND=set_bash_prompt
