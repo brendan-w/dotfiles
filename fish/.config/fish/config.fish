@@ -40,10 +40,13 @@ set -g theme_display_ruby no
 set -g theme_display_user no
 
 # virtual-fish
-if python -c 'import virtualfish' > /dev/null 2>&1
-    eval (python -m virtualfish compat_aliases)
-else
-    echo "Virtualfish not found"
-    echo "Install using 'pip install --user virtualfish'"
+# test for python first
+if command -s python 
+    if python -c 'import virtualfish' > /dev/null 2>&1
+        eval (python -m virtualfish compat_aliases)
+    else
+        echo "Virtualfish not found"
+        echo "Install using 'pip install --user virtualfish'"
+    end
 end
 
