@@ -41,7 +41,7 @@ set -g theme_display_user no
 
 # virtual-fish
 # test for python first
-if command -s python 
+if command -s python > /dev/null 2>&1
     if python -c 'import virtualfish' > /dev/null 2>&1
         eval (python -m virtualfish compat_aliases)
     else
