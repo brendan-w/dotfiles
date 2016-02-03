@@ -6,8 +6,7 @@ set showcmd " show me commands as I type them
 set softtabstop=4
 set shiftwidth=4
 set autoindent
-set smartindent
-set expandtab
+set expandtab " uses spaces when TAB is pressed
 set backspace=indent,eol,start
 set encoding=utf-8
 set ruler " show cursor coordinates
@@ -18,7 +17,7 @@ set backupdir=~/.vim/tmp " dump everything in a temp directory
 set directory=~/.vim/tmp
 set undodir  =~/.vim/tmp
 set copyindent
-set ttyfast
+set ttyfast " it's ok to send lots of redrawing commands
 set incsearch " search as you type, ENTER will accept, ESC will stop
 set ignorecase smartcase " ignore case when searching, unless there is an uppercase character
 set whichwrap+=<,>,h,l,[,] " make Left and Right movement keys wrap around the ends of lines
