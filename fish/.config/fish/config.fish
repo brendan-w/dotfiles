@@ -28,6 +28,12 @@ alias gco="git checkout"
 
 
 # --------------- env ---------------
+
+# enable 256 color mode
+if test $TERM = "xterm"
+    set -gx TERM "xterm-256color"
+end
+
 set -gx VIRTUALFISH_HOME "$HOME/.virtualenvs" # won't expand ~
 set -gx GCC_COLORS "always"
 set -gx PAGER "less"
