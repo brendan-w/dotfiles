@@ -36,7 +36,7 @@ end
 
 set -gx VIRTUALFISH_HOME "$HOME/.virtualenvs" # won't expand ~
 set -gx GCC_COLORS "always"
-set -gx PAGER "less"
+set -gx PAGER "less -r"
 set -gx EDITOR "vim"
 
 set -g theme_display_git yes
