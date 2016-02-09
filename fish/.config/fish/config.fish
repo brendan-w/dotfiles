@@ -10,7 +10,7 @@ alias ag='ag --color-path "38;5;27" --color-line-number "1;38;5;127" --color-mat
 alias df='df --human-readable'
 alias du='du --human-readable --total'
 alias hexdump='hexdump -C'
-alias tree='tree -C -F'
+alias tree='tree -C -F -I .git'
 alias xx='atool -x'
 alias xl='atool -l'
 
