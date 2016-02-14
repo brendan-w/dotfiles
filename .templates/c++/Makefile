@@ -5,16 +5,16 @@ HEADERS=
 OBJ=src/main.o
 
 
-CC=gcc
-CFLAGS=-std=c99 -Wall -Wextra -pedantic -ggdb
+CXX=g++
+CXXFLAGS=-std=c++11 -Wall -Wextra -pedantic -ggdb
 LIBS=
 
 
 $(BIN): $(OBJ) 
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 
 %.o: %.c $(HEADERS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 .PHONY: clean
 clean:
