@@ -1,6 +1,7 @@
 [user]
-	email = brendanw@windworksdesign.com
-	name = Brendan Whitfield
+    email = brendanw@windworksdesign.com
+    name = Brendan Whitfield
+
 [alias]
     wipe = !git reset --hard && git clean -fd
     unstage = reset --
@@ -15,4 +16,7 @@
         changed = yellow
         untracked = red
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
+
+[status]
+    showUntrackedFiles = all
