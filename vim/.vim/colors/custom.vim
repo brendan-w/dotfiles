@@ -13,7 +13,7 @@ let g:colors_name = "custom"
 hi Cursor                       ctermfg=235  ctermbg=255  cterm=NONE
 hi Visual                       ctermfg=NONE ctermbg=236  cterm=NONE
 hi CursorLine                   ctermfg=NONE ctermbg=234  cterm=NONE
-hi CursorLineNr                 ctermfg=255  ctermbg=NONE cterm=NONE
+hi CursorLineNr                 ctermfg=255  ctermbg=236  cterm=NONE
 hi CursorColumn                 ctermfg=NONE ctermbg=234  cterm=NONE
 hi ColorColumn                  ctermfg=NONE ctermbg=234  cterm=NONE
 hi LineNr                       ctermfg=242  ctermbg=234  cterm=NONE
@@ -21,8 +21,8 @@ hi VertSplit                    ctermfg=241  ctermbg=241  cterm=NONE
 hi MatchParen                   ctermfg=81   ctermbg=NONE cterm=underline
 hi StatusLine                   ctermfg=231  ctermbg=234  cterm=bold
 hi StatusLineNC                 ctermfg=231  ctermbg=234  cterm=NONE
-hi Pmenu                        ctermfg=NONE ctermbg=NONE cterm=NONE
-hi PmenuSel                     ctermfg=NONE ctermbg=59   cterm=NONE
+hi Pmenu                        ctermfg=242  ctermbg=234  cterm=NONE
+hi PmenuSel                     ctermfg=255  ctermbg=236  cterm=NONE
 hi IncSearch                    ctermfg=235  ctermbg=186  cterm=NONE
 hi Search                       ctermfg=NONE ctermbg=NONE cterm=underline
 hi Directory                    ctermfg=141  ctermbg=NONE cterm=NONE
