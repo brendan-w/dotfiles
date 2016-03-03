@@ -21,7 +21,7 @@ set ttyfast " it's ok to send lots of redrawing commands
 set incsearch " search as you type, ENTER will accept, ESC will stop
 set ignorecase smartcase " ignore case when searching, unless there is an uppercase character
 set whichwrap+=<,>,h,l,[,] " make Left and Right movement keys wrap around the ends of lines
-set scrolloff=15 " always keep N lines around the cursor
+set scrolloff=100 " always keep N lines around the cursor
 set shortmess+=I " don't show the intro message
 
 
@@ -43,9 +43,6 @@ call plug#end()
 set t_Co=256 " enable 256 colors
 syntax on
 colorscheme custom
-
-" custom colors
-hi CursorLine ctermbg=236
 
 " ====================== Controls ======================
 
