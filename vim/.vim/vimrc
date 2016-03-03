@@ -57,6 +57,8 @@ while c <= 'z'
     let c = nr2char(1+char2nr(c))
 endw
 
+set ttimeout
+set ttimeoutlen=10
 
 imap jj <Esc>
 
@@ -78,6 +80,8 @@ nmap <F1> <NOP>
 imap <F1> <C-o>
 vmap <F1> <NOP>
 
+" use F2 to toggle paste mode
+set pastetoggle=<F2>
 
 " In many terminal emulators the mouse works just fine, so I enable it.
 if has('mouse')
