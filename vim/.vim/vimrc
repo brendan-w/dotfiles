@@ -1,8 +1,8 @@
 
-
 set nocompatible
 set number " show line numbers
 set showcmd " show me commands as I type them
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
@@ -24,7 +24,6 @@ set whichwrap+=<,>,h,l,[,] " make Left and Right movement keys wrap around the e
 set scrolloff=100 " always keep N lines around the cursor
 set shortmess+=I " don't show the intro message
 
-
 " ==================== vim-plug ======================
 
 call plug#begin('~/.vim/plugged')
@@ -39,13 +38,18 @@ Plug 'terryma/vim-multiple-cursors' " multiple cursors
 
 call plug#end()
 
-
 " ====================== Colors =======================
+
 set t_Co=256 " enable 256 colors
 syntax on
 colorscheme custom
 
 " ====================== Controls ======================
+
+" In many terminal emulators the mouse works just fine, so I enable it.
+if has('mouse')
+    set mouse=a
+endif
 
 " hack, to prevent my ALT key from escaping back to normal mode
 let c='a'
@@ -72,6 +76,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 inoremap <C-d> <C-o>*
 inoremap <A-d> <C-o>#
 
+" use Shift-Tab to insert a literal tab
+inoremap <S-Tab> <C-V><Tab>
+
+" ---------------------- F Keys ----------------------
+
 " use F1 to save and exit
 nmap <F1> :wq<CR>
 imap <F1> <ESC>:wq<CR>
@@ -89,15 +98,8 @@ set pastetoggle=<F3>
 " use F12 to force close, without saving
 nmap <F12> :q!<CR>
 
-" In many terminal emulators the mouse works just fine, so I enable it.
-if has('mouse')
-    set mouse=a
-endif
-
-
 " ====================================================
 
 " be a text editor when you wake up
 " also, piss off every VIM user who touches my computer
 startinsert
-
