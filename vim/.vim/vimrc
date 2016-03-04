@@ -23,7 +23,7 @@ set ignorecase smartcase " ignore case when searching, unless there is an upperc
 set whichwrap+=<,>,h,l,[,] " make Left and Right movement keys wrap around the ends of lines
 set scrolloff=100 " always keep N lines around the cursor
 set shortmess+=I " don't show the intro message
-set listchars=tab:▸\ ,trail:· " show tabs and trailing whitespace as printed characters
+set listchars=tab:\|\ ,trail:· " show tabs and trailing whitespace as printed characters
 set list
 
 " ==================== vim-plug ======================

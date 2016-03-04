@@ -51,7 +51,7 @@ hi Number                       ctermfg=141  ctermbg=NONE cterm=NONE
 hi Operator                     ctermfg=81   ctermbg=NONE cterm=NONE
 hi PreProc                      ctermfg=81   ctermbg=NONE cterm=NONE
 hi Special                      ctermfg=255  ctermbg=NONE cterm=NONE
-hi SpecialKey                   ctermfg=59   ctermbg=237  cterm=NONE
+hi SpecialKey                   ctermfg=236  ctermbg=NONE cterm=NONE
 hi Statement                    ctermfg=81   ctermbg=NONE cterm=NONE
 hi StorageClass                 ctermfg=81   ctermbg=NONE cterm=NONE
 hi String                       ctermfg=185  ctermbg=NONE cterm=NONE
