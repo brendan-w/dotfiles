@@ -2,11 +2,11 @@
 set nocompatible
 set number " show line numbers
 set showcmd " show me commands as I type them
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set autoindent
 set expandtab " uses spaces when TAB is pressed
+set shiftwidth=4 " number of spaces that TABs get expanded to
+set softtabstop=4 " remove 4 spaces for a tab when BACKSPACE is pressed
+set tabstop=4 " width of actual TAB characters
+set autoindent
 set backspace=indent,eol,start
 set encoding=utf-8
 set ruler " show cursor coordinates
