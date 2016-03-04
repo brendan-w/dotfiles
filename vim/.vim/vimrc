@@ -56,7 +56,7 @@ while c <= 'z'
 endw
 
 set ttimeout
-set ttimeoutlen=10
+set ttimeoutlen=0
 
 imap jj <Esc>
 
@@ -72,14 +72,22 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 inoremap <C-d> <C-o>*
 inoremap <A-d> <C-o>#
 
-" use F1 to run a normal command from insert mode
-" also prevent it from openning the help
-nmap <F1> <NOP>
-imap <F1> <C-o>
-vmap <F1> <NOP>
+" use F1 to save and exit
+nmap <F1> :wq<CR>
+imap <F1> <ESC>:wq<CR>
+vmap <F1> <ESC>:wq<CR>
 
-" use F2 to toggle paste mode
-set pastetoggle=<F2>
+" use F2 to run a normal command from insert mode
+" also prevent it from openning the help
+nmap <F2> <NOP>
+imap <F2> <C-o>
+vmap <F2> <NOP>
+
+" use F3 to toggle paste mode
+set pastetoggle=<F3>
+
+" use F12 to force close, without saving
+nmap <F12> :q!<CR>
 
 " In many terminal emulators the mouse works just fine, so I enable it.
 if has('mouse')

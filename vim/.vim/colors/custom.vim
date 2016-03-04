@@ -39,8 +39,8 @@ hi DiffAdd                      ctermfg=255  ctermbg=64   cterm=bold
 hi DiffDelete                   ctermfg=88   ctermbg=NONE cterm=NONE
 hi DiffChange                   ctermfg=NONE ctermbg=NONE cterm=NONE
 hi DiffText                     ctermfg=255  ctermbg=24   cterm=bold
-hi ErrorMsg                     ctermfg=255  ctermbg=81   cterm=NONE
-hi WarningMsg                   ctermfg=255  ctermbg=81   cterm=NONE
+hi ErrorMsg                     ctermfg=1    ctermbg=NONE cterm=bold
+hi WarningMsg                   ctermfg=3    ctermbg=NONE cterm=bold
 hi Float                        ctermfg=141  ctermbg=NONE cterm=NONE
 hi Function                     ctermfg=141  ctermbg=NONE cterm=NONE
 hi Identifier                   ctermfg=81   ctermbg=NONE cterm=NONE
