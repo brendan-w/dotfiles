@@ -13,6 +13,7 @@ alias hexdump='hexdump -C'
 alias tree='tree -C -F -I .git'
 alias xx='atool -x'
 alias xl='atool -l'
+alias rm='rm -r' # probably a bad idea, but we'll see
 
 
 # --------------- git ---------------
