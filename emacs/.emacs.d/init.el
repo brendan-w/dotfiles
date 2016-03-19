@@ -25,6 +25,10 @@
   (setq helm-buffers-fuzzy-matching t)
   (setq helm-split-window-in-side-p t)) ;; keep helm inside the current window/frame
 
+(use-package expand-region
+    :ensure t
+    :config
+    (global-set-key (kbd "C-=") 'er/expand-region))
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
