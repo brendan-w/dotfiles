@@ -14,11 +14,13 @@
 
 (global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
 
+;; window handling (splitting/deleting)
 ;; TODO: move window focus in the correct direction
 (global-set-key (kbd "<C-M-up>") 'split-window-vertically)
 (global-set-key (kbd "<C-M-down>") 'split-window-vertically)
 (global-set-key (kbd "<C-M-left>") 'split-window-horizontally)
 (global-set-key (kbd "<C-M-right>") 'split-window-horizontally)
+(global-set-key (kbd "<C-M-delete>") 'delete-window)
 
 
 ;; ---------------- packaged stuff----------------
