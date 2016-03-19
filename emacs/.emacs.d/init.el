@@ -1,4 +1,7 @@
 
+; disable the startup message
+(setq inhibit-startup-message t)
+
 ; look in ~/.emacs.d/lisp for custom lisp modules
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -16,7 +19,9 @@
   :init
   (helm-mode 1)
   :config
-  (global-set-key (kbd "M-x") 'helm-M-x))
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-SPC") 'helm-mini))
+
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
