@@ -30,6 +30,12 @@
     :config
     (global-set-key (kbd "C-=") 'er/expand-region))
 
+(use-package multiple-cursors
+    :ensure t
+    :config
+    (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+    (global-set-key (kbd "C-<") 'mc/mark-previous-like-this))
+
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (tool-bar-mode -1) ;; hide the gui toolbar
