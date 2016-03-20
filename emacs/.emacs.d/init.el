@@ -30,15 +30,14 @@
 
 (use-package monokai-theme
     :ensure t
-    :init
+    :config
     (load-theme 'monokai t))
 
 (use-package helm
     :ensure t
-    :init
+    :config
     (helm-mode 1)
     (helm-autoresize-mode 1)
-    :config
     (global-set-key (kbd "M-x") 'helm-M-x)
     (global-set-key (kbd "M-SPC") 'helm-mini)
     (setq helm-buffers-fuzzy-matching t)
