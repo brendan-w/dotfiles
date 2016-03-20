@@ -34,15 +34,15 @@
     (load-theme 'monokai t))
 
 (use-package helm
-  :ensure t
-  :init
-  (helm-mode 1)
-  (helm-autoresize-mode 1)
-  :config
-  (global-set-key (kbd "M-x") 'helm-M-x)
-  (global-set-key (kbd "M-SPC") 'helm-mini)
-  (setq helm-buffers-fuzzy-matching t)
-  (setq helm-split-window-in-side-p t)) ;; keep helm inside the current window/frame
+    :ensure t
+    :init
+    (helm-mode 1)
+    (helm-autoresize-mode 1)
+    :config
+    (global-set-key (kbd "M-x") 'helm-M-x)
+    (global-set-key (kbd "M-SPC") 'helm-mini)
+    (setq helm-buffers-fuzzy-matching t)
+    (setq helm-split-window-in-side-p t)) ;; keep helm inside the current window/frame
 
 (use-package expand-region
     :ensure t
