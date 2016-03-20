@@ -11,6 +11,7 @@
 (global-linum-mode) ;; display line numbers
 (global-hl-line-mode) ;; highlight the current line
 (blink-cursor-mode 0) ;; DON'T blink the cursor
+(delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
 (global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
 (global-set-key (kbd "<C-home>") 'recenter-top-bottom) ;; moves things to center/top/bottom of screen
 
@@ -51,5 +52,5 @@
 (use-package multiple-cursors
     :ensure t
     :config
-    (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-    (global-set-key (kbd "C-<") 'mc/mark-previous-like-this))
+    (global-set-key (kbd "C-d") 'mc/mark-next-like-this)
+    (global-set-key (kbd "C-S-l") 'mc/edit-lines))
