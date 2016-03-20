@@ -11,6 +11,7 @@
 (global-linum-mode) ;; display line numbers
 (global-hl-line-mode) ;; highlight the current line
 (blink-cursor-mode 0) ;; DON'T blink the cursor
+(electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
 (global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
 (global-set-key (kbd "<C-home>") 'recenter-top-bottom) ;; moves things to center/top/bottom of screen
