@@ -54,3 +54,9 @@
     :config
     (global-set-key (kbd "C-d") 'mc/mark-next-like-this)
     (global-set-key (kbd "C-S-l") 'mc/edit-lines))
+
+(use-package move-text
+    :ensure t
+    :config
+    (global-set-key (kbd "<C-S-up>") 'move-text-up)
+    (global-set-key (kbd "<C-S-down>") 'move-text-down))
