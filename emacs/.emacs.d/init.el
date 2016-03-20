@@ -1,4 +1,7 @@
 
+;; look in ~/.emacs.d/lisp for custom lisp modules
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
 ;; ---------------- builtin stuff----------------
 
 (setq inhibit-startup-message t) ;; disable the startup message
@@ -8,25 +11,12 @@
 (global-linum-mode) ;; display line numbers
 (global-hl-line-mode) ;; highlight the current line
 (blink-cursor-mode 0) ;; DON'T blink the cursor
-
-(require 'windmove) ;; use M-<arrow> to change focus between visible buffers
-(windmove-default-keybindings 'meta)
-
 (global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
 
-;; window handling (splitting/deleting)
-;; TODO: move window focus in the correct direction
-(global-set-key (kbd "<C-M-up>") 'split-window-vertically)
-(global-set-key (kbd "<C-M-down>") 'split-window-vertically)
-(global-set-key (kbd "<C-M-left>") 'split-window-horizontally)
-(global-set-key (kbd "<C-M-right>") 'split-window-horizontally)
-(global-set-key (kbd "<C-M-delete>") 'delete-window)
-
+;; initialize my window management keys
+(require 'init-wm)
 
 ;; ---------------- packaged stuff----------------
-
-;; look in ~/.emacs.d/lisp for custom lisp modules
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-elpa)
 
@@ -58,5 +48,3 @@
     :config
     (global-set-key (kbd "C->") 'mc/mark-next-like-this)
     (global-set-key (kbd "C-<") 'mc/mark-previous-like-this))
-
-
