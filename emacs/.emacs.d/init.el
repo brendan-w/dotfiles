@@ -4,6 +4,8 @@
 
 ;; ---------------- builtin stuff----------------
 
+(setq make-backup-files nil) ;; filename~   might be a bad idea, we'll see...
+(setq auto-save-default nil) ;; #filename#
 (setq inhibit-startup-message t) ;; disable the startup message
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
