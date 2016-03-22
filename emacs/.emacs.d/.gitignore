@@ -46,3 +46,6 @@ flycheck_*.el
 
 #
 recentf
+
+# company autocomplete data
+ac-comphist.dat
