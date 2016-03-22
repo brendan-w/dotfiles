@@ -19,6 +19,7 @@
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
 (global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
 (global-set-key (kbd "<C-home>") 'recenter-top-bottom) ;; moves things to center/top/bottom of screen
+(set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
 ;; initialize my window management keys
 (require 'init-wm)
