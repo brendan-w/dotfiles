@@ -49,3 +49,7 @@ recentf
 
 # company autocomplete data
 ac-comphist.dat
+
+# projectile data
+projectile-bookmarks.eld
+projectile.cache

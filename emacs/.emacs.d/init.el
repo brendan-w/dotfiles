@@ -71,3 +71,14 @@
     :config
     (global-company-mode)
     (setq company-idle-delay 0))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-global-mode)
+  (setq projectile-enable-caching t))
+
+(use-package helm-projectile
+  :ensure t
+  :config
+  (global-set-key (kbd "C-M-SPC") 'helm-projectile-find-file))
