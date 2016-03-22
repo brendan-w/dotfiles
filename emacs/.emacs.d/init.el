@@ -10,8 +10,10 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (tool-bar-mode -1) ;; hide the gui toolbar
-(global-linum-mode) ;; display line numbers
-(global-hl-line-mode) ;; highlight the current line
+(global-linum-mode 1) ;; display line numbers
+(global-hl-line-mode 1) ;; highlight the current line
+(line-number-mode 1) ;; show the line and column number in the modeline
+(column-number-mode 1)
 (blink-cursor-mode 0) ;; DON'T blink the cursor
 (electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
