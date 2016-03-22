@@ -60,3 +60,10 @@
     :config
     (global-set-key (kbd "<C-S-up>") 'move-text-up)
     (global-set-key (kbd "<C-S-down>") 'move-text-down))
+
+;; auto completion
+(use-package company
+    :ensure t
+    :config
+    (global-company-mode)
+    (setq company-idle-delay 0))
