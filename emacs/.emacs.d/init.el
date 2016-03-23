@@ -11,7 +11,6 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (tool-bar-mode -1) ;; hide the gui toolbar
 (global-linum-mode 1) ;; display line numbers
-(global-hl-line-mode 1) ;; highlight the current line
 (line-number-mode 1) ;; show the line and column number in the modeline
 (column-number-mode 1)
 (blink-cursor-mode 0) ;; DON'T blink the cursor
