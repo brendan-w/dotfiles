@@ -13,7 +13,7 @@
 
 ;; indentation
 (setq-default indent-tabs-mode nil) ;; only use spaces for tabs
-(setq tab-width 4) ;; the width of actual TAB characters
+(setq-default tab-width 4) ;; the width of actual TAB characters
 (setq c-basic-offset 4) ;; indentation step for C mode
 (setq c-default-style "bsd") ;; Allman style
 
