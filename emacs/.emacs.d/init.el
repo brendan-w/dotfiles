@@ -31,11 +31,6 @@
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
 (set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
-;; keys
-(global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
-(global-set-key (kbd "<C-home>") 'recenter-top-bottom) ;; moves things to center/top/bottom of screen
-(global-set-key (kbd "TAB") 'tab-to-tab-stop) ;; force the tab key to always indent. Don't try to be smart
-
 ;; initialize my window management keys
 (require 'init-wm)
 
@@ -59,34 +54,24 @@
     :config
     (helm-mode 1)
     (helm-autoresize-mode 1)
-    (global-set-key (kbd "M-x") 'helm-M-x)
-    (global-set-key (kbd "M-SPC") 'helm-mini)
     (setq helm-buffers-fuzzy-matching t)
     (setq helm-split-window-in-side-p t)) ;; keep helm inside the current window/frame
 
 (use-package expand-region
-    :ensure t
-    :config
-    (global-set-key (kbd "C-=") 'er/expand-region))
+    :ensure t)
 
 (use-package multiple-cursors
-    :ensure t
-    :config
-    (global-set-key (kbd "C-d") 'mc/mark-next-like-this)
-    (global-set-key (kbd "C-S-l") 'mc/edit-lines))
+    :ensure t)
 
 (use-package move-text
-    :ensure t
-    :config
-    (global-set-key (kbd "<C-S-up>") 'move-text-up)
-    (global-set-key (kbd "<C-S-down>") 'move-text-down))
+    :ensure t)
 
 ;; auto completion
 (use-package company
     :ensure t
     :config
     (global-company-mode)
-    (setq company-idle-delay 0))
+    (setq company-idle-delay 0.2))
 
 (use-package projectile
     :ensure t
@@ -95,9 +80,7 @@
     (setq projectile-enable-caching t))
 
 (use-package helm-projectile
-    :ensure t
-    :config
-    (global-set-key (kbd "C-M-SPC") 'helm-projectile-find-file))
+    :ensure t)
 
 (use-package web-mode
     :ensure t
@@ -111,3 +94,7 @@
     (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 )
+
+;; load my key bindings as a minor mode, to prevent major modes
+;; from overriding them.
+(require 'init-keys)

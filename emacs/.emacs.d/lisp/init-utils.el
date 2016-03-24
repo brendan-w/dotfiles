@@ -11,8 +11,6 @@
     (beginning-of-line)
 )
 
-(global-set-key (kbd "C-l") 'my-select-line)
-
 
 ;; make the backspace key delete whitespace to the next tab stop
 
@@ -37,6 +35,6 @@
             (backward-delete-char (- (match-end 1) (match-beginning 1)))
           (call-interactively 'backward-delete-char))))))
 
-(global-set-key (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
+; (global-set-key (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
 
 (provide 'init-utils)
