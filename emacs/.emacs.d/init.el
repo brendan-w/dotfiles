@@ -29,9 +29,12 @@
 (blink-cursor-mode 0) ;; DON'T blink the cursor
 (electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
+(set-face-attribute 'default nil :height 100) ;; default font size to 10pt
+
+;; keys
 (global-set-key (kbd "C-z") 'undo) ; act like every other program. also, don't run (suspend-frame)
 (global-set-key (kbd "<C-home>") 'recenter-top-bottom) ;; moves things to center/top/bottom of screen
-(set-face-attribute 'default nil :height 100) ;; default font size to 10pt
+(global-set-key (kbd "TAB") 'tab-to-tab-stop) ;; force the tab key to always indent. Don't try to be smart
 
 ;; initialize my window management keys
 (require 'init-wm)
