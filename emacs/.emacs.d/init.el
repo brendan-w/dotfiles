@@ -9,7 +9,18 @@
 (setq inhibit-startup-message t) ;; disable the startup message
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(tool-bar-mode -1) ;; hide the gui toolbar
+
+;; indentation
+; (setq-default indent-tabs-mode nil)
+(setq tab-width 4) ;; the width of actual TAB characters
+(setq c-basic-offset 4) ;; indentation step for C mode
+(setq c-default-style "bsd") ;; Allman style
+
+;; show me whitespace
+(setq whitespace-style '(face indentation trailing))
+(global-whitespace-mode 1)
+
+(tool-bar-mode 0) ;; hide the gui toolbar
 (global-linum-mode 1) ;; display line numbers
 (line-number-mode 1) ;; show the line and column number in the modeline
 (column-number-mode 1)
