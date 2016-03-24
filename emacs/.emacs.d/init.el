@@ -86,12 +86,25 @@
     (setq company-idle-delay 0))
 
 (use-package projectile
-  :ensure t
-  :config
-  (projectile-global-mode)
-  (setq projectile-enable-caching t))
+    :ensure t
+    :config
+    (projectile-global-mode)
+    (setq projectile-enable-caching t))
 
 (use-package helm-projectile
-  :ensure t
-  :config
-  (global-set-key (kbd "C-M-SPC") 'helm-projectile-find-file))
+    :ensure t
+    :config
+    (global-set-key (kbd "C-M-SPC") 'helm-projectile-find-file))
+
+(use-package web-mode
+    :ensure t
+    :config
+    (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+)
