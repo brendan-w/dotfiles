@@ -8,6 +8,7 @@
     (define-key map (kbd "C-z")        'undo) ; act like every other program. also, don't run (suspend-frame)
     (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
     (define-key map (kbd "TAB")        'tab-to-tab-stop) ;; force the tab key to always indent. Don't try to be smart
+    (define-key map (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
     (define-key map (kbd "C-l")        'my-select-line)
 
     (define-key map (kbd "M-x")        'helm-M-x)

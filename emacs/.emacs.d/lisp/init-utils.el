@@ -35,6 +35,5 @@
             (backward-delete-char (- (match-end 1) (match-beginning 1)))
           (call-interactively 'backward-delete-char))))))
 
-; (global-set-key (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
 
 (provide 'init-utils)
