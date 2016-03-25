@@ -23,7 +23,7 @@
 
 (tool-bar-mode 0) ;; hide the gui toolbar
 (menu-bar-mode 0) ;; hide the menu bar
-(global-linum-mode 1) ;; display line numbers
+; (global-linum-mode 1) ;; display line numbers
 (line-number-mode 1) ;; show the line and column number in the modeline
 (column-number-mode 1)
 (blink-cursor-mode 0) ;; DON'T blink the cursor
