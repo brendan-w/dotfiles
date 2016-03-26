@@ -44,6 +44,11 @@
     (toggle-truncate-lines 1) ; don't wrap lines when I'm coding
 ))
 
+(add-hook 'text-mode-hook (lambda ()
+    (toggle-truncate-lines 0) ; wrap lines
+    (toggle-word-wrap 1) ; wrap on word boundries
+))
+
 ;; ---------------- packaged stuff ----------------
 
 (require 'init-elpa)
