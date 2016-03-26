@@ -2,7 +2,7 @@
 ;; look in ~/.emacs.d/lisp for custom lisp modules
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-;; ---------------- builtin stuff----------------
+;; ---------------- builtin stuff ----------------
 
 (setq make-backup-files nil) ;; filename~   might be a bad idea, we'll see...
 (setq auto-save-default nil) ;; #filename#
@@ -38,7 +38,13 @@
 (require 'init-utils)
 
 
-;; ---------------- packaged stuff----------------
+;; ---------------- hooks ----------------
+
+(add-hook 'prog-mode-hook (lambda ()
+    (toggle-truncate-lines 1) ; don't wrap lines when I'm coding
+))
+
+;; ---------------- packaged stuff ----------------
 
 (require 'init-elpa)
 
@@ -71,7 +77,8 @@
     :ensure t
     :config
     (global-company-mode)
-    (setq company-idle-delay 0.2))
+    (setq company-idle-delay 0.2)
+    (setq company-minumum-prefix-length 2))
 
 (use-package projectile
     :ensure t
