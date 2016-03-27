@@ -10,6 +10,8 @@
     (define-key map (kbd "TAB")        'tab-to-tab-stop) ;; force the tab key to always indent. Don't try to be smart
     (define-key map (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
     (define-key map (kbd "C-l")        'my-select-line)
+    (define-key map (kbd "<C-prior>")  'previous-buffer)
+    (define-key map (kbd "<C-next>")   'next-buffer)
 
     (define-key map (kbd "M-x")        'helm-M-x)
     (define-key map (kbd "M-SPC")      'helm-mini)

@@ -3,8 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        tab-to-tab-stop
         backspace-whitespace-to-tab-stop
+        c-electric-brace
+        tab-to-tab-stop
         ))
 
 (setq mc/cmds-to-run-once
