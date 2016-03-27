@@ -12,4 +12,5 @@
       '(
         helm-M-x
         helm-mini
+        my-select-next
         ))

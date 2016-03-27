@@ -1,4 +1,13 @@
 
+(defun my-select-next ()
+    (interactive)
+    (if (region-active-p)
+        (call-interactively 'mc/mark-next-like-this)
+        (call-interactively 'er/expand-region) ;; mark the word that the cursor's in
+    )
+)
+
+
 ;; global keymappings
 ;; I don't want any of these overriden by major modes
 
@@ -6,10 +15,13 @@
   (let ((map (make-sparse-keymap)))
 
     (define-key map (kbd "C-z")        'undo) ; act like every other program. also, don't run (suspend-frame)
-    (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
     (define-key map (kbd "TAB")        'tab-to-tab-stop) ;; force the tab key to always indent. Don't try to be smart
     (define-key map (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
     (define-key map (kbd "C-l")        'my-select-line)
+
+    ; (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
+    (define-key map (kbd "<C-home>")   'beginning-of-buffer)
+    (define-key map (kbd "<C-end>")    'end-of-buffer)
     (define-key map (kbd "<C-prior>")  'previous-buffer)
     (define-key map (kbd "<C-next>")   'next-buffer)
 
@@ -17,7 +29,7 @@
     (define-key map (kbd "M-SPC")      'helm-mini)
     (define-key map (kbd "C-M-SPC")    'helm-projectile-find-file)
 
-    (define-key map (kbd "C-d")        'mc/mark-next-like-this)
+    (define-key map (kbd "C-d")        'my-select-next)
     (define-key map (kbd "C-S-l")      'mc/edit-lines)
 
     (define-key map (kbd "<C-S-up>")   'move-text-up)
@@ -30,9 +42,9 @@
 
 
 (define-minor-mode my-keys-minor-mode
-  "A minor mode so that my key settings override annoying major modes."
-  :init-value t
-  :lighter " my-keys")
+    "A minor mode so that my key settings override annoying major modes."
+    :init-value t
+    :lighter " my-keys")
 
 
 
