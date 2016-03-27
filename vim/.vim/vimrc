@@ -31,11 +31,11 @@ set list
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'tomasr/molokai'               " monokai clone colorscheme
 Plug 'jiangmiao/auto-pairs'         " automatically creates the closing paren, bracket, etc...
 Plug 'edsono/vim-matchit'           " allows '%' command to jump between opening/closing HTML tags
 Plug 'scrooloose/nerdcommenter'     " commenting
 Plug 'terryma/vim-multiple-cursors' " multiple cursors
-Plug 'scrooloose/nerdtree'
 " Plug 'chriskempson/base16-vim'
 " Plug 'vim-scripts/closetag.vim' " allows 'CTRL-_' to close the currently opened HTML tag
 " Plug 'bling/vim-airline'
@@ -46,7 +46,7 @@ call plug#end()
 
 set t_Co=256 " enable 256 colors
 syntax on
-colorscheme custom
+colorscheme molokai
 
 " ====================== Controls ======================
 
