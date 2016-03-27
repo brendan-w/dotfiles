@@ -13,9 +13,7 @@ set ruler " show cursor coordinates
 set laststatus=2 " always show statusline
 set cursorline " illuminate the cursors current position
 set noswapfile
-set backupdir=~/.vim/tmp " dump everything in a temp directory
-set directory=~/.vim/tmp
-set undodir  =~/.vim/tmp
+set nobackup
 set copyindent
 set ttyfast " it's ok to send lots of redrawing commands
 set incsearch " search as you type, ENTER will accept, ESC will stop
