@@ -5,6 +5,7 @@
       '(
         backspace-whitespace-to-tab-stop
         c-electric-brace
+        kill-region
         tab-to-tab-stop
         ))
 
@@ -12,5 +13,6 @@
       '(
         helm-M-x
         helm-mini
+        helm-projectile-find-file
         my-select-next
         ))
