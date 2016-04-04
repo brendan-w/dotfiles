@@ -5,6 +5,8 @@
       '(
         backspace-whitespace-to-tab-stop
         c-electric-brace
+        move-text-down
+        move-text-up
         tab-to-tab-stop
         ))
 
