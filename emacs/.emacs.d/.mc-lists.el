@@ -8,6 +8,8 @@
         c-electric-lt-gt
         c-electric-slash
         electric-newline-and-maybe-indent
+        move-text-down
+        move-text-up
         kill-region
         my-select-line
         tab-to-tab-stop

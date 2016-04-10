@@ -21,7 +21,7 @@
     (define-key map (kbd "C-c C-c")    'kill-ring-save) ; copy
     (define-key map (kbd "C-v")        'yank) ; paste
     (define-key map (kbd "M-DEL")      'kill-this-buffer)
-
+    (define-key map (kbd "C-a")        'mark-whole-buffer)
 
     ; (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
