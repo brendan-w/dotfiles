@@ -5,7 +5,11 @@
       '(
         backspace-whitespace-to-tab-stop
         c-electric-brace
+        c-electric-lt-gt
+        c-electric-slash
+        electric-newline-and-maybe-indent
         kill-region
+        my-select-line
         tab-to-tab-stop
         ))
 
