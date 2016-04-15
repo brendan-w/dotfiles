@@ -27,8 +27,8 @@
     ; (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
     (define-key map (kbd "<C-end>")    'end-of-buffer)
-    (define-key map (kbd "<C-prior>")  'previous-buffer)
-    (define-key map (kbd "<C-next>")   'next-buffer)
+    (define-key map (kbd "<C-prior>")  'tabbar-backward-tab)
+    (define-key map (kbd "<C-next>")   'tabbar-forward-tab)
 
     (define-key map (kbd "M-x")        'helm-M-x)
     (define-key map (kbd "M-SPC")      'helm-mini)

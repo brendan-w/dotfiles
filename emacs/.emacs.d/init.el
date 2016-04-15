@@ -108,6 +108,17 @@
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 )
 
+(use-package tabbar
+    :ensure t
+    :config
+    (tabbar-mode)
+    (setq tabbar-buffer-groups-function (lambda ()
+        (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+            ((eq major-mode 'dired-mode) "emacs")
+            (t "user"))))
+    )
+)
+
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
 (require 'init-keys)

@@ -6,11 +6,13 @@
         backspace-whitespace-to-tab-stop
         c-electric-brace
         c-electric-lt-gt
+        c-electric-paren
+        c-electric-semi&comma
         c-electric-slash
         electric-newline-and-maybe-indent
+        kill-region
         move-text-down
         move-text-up
-        kill-region
         my-select-line
         tab-to-tab-stop
         ))
