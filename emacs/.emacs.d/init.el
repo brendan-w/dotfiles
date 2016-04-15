@@ -119,6 +119,12 @@
     )
 )
 
+(use-package smooth-scroll
+    :ensure t
+    :config
+    (setq smooth-scroll/vscroll-step-size 5)
+)
+
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
 (require 'init-keys)
