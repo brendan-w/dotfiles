@@ -141,6 +141,12 @@
     (window-numbering-mode 1)
 )
 
+(use-package undo-tree
+    :ensure t
+    :config
+    (global-undo-tree-mode 1)
+)
+
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
 (require 'init-keys)
