@@ -18,7 +18,7 @@
 (setq c-default-style "bsd") ;; Allman style
 
 ;; show me whitespace
-(setq whitespace-style '(face indentation trailing))
+(setq whitespace-style '(face tabs spaces trailing space-before-tab indentation space-after-tab space-mark tab-mark))
 (global-whitespace-mode 1)
 
 (tool-bar-mode 0) ;; hide the gui toolbar
