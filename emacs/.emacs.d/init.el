@@ -108,6 +108,24 @@
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 )
 
+(use-package tabbar
+    :ensure t
+    :config
+    (tabbar-mode)
+    (setq tabbar-buffer-groups-function (lambda ()
+        (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+            ((eq major-mode 'dired-mode) "emacs")
+            (t "user"))))
+    )
+)
+
+(use-package smooth-scroll
+    :ensure t
+    :config
+    (smooth-scroll-mode)
+    (setq smooth-scroll/vscroll-step-size 5)
+)
+
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
 (require 'init-keys)

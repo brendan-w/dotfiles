@@ -15,8 +15,9 @@
   (let ((map (make-sparse-keymap)))
 
     (define-key map (kbd "C-z")        'undo) ; act like every other program. also, don't run (suspend-frame)
-    (define-key map (kbd "TAB")        'tab-to-tab-stop) ;; force the tab key to always indent. Don't try to be smart
+    (define-key map (kbd "TAB")        'tab-to-tab-stop) ; force the tab key to always indent. Don't try to be smart
     (define-key map (kbd "<backspace>") 'backspace-whitespace-to-tab-stop)
+    (define-key map (kbd "<M-backspace>") 'backward-kill-word) ; prevent my terminal motor memory from killing buffers
     (define-key map (kbd "C-l")        'my-select-line)
     (define-key map (kbd "C-c C-c")    'kill-ring-save) ; copy
     (define-key map (kbd "C-v")        'yank) ; paste
@@ -26,8 +27,8 @@
     ; (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
     (define-key map (kbd "<C-end>")    'end-of-buffer)
-    (define-key map (kbd "<C-prior>")  'previous-buffer)
-    (define-key map (kbd "<C-next>")   'next-buffer)
+    (define-key map (kbd "<C-prior>")  'tabbar-backward-tab)
+    (define-key map (kbd "<C-next>")   'tabbar-forward-tab)
 
     (define-key map (kbd "M-x")        'helm-M-x)
     (define-key map (kbd "M-SPC")      'helm-mini)
