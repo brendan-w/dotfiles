@@ -81,19 +81,16 @@
 (use-package company
     :ensure t
     :config
-    (global-company-mode)
+    (global-company-mode 1)
     (setq company-idle-delay 0.2)
     (setq company-minumum-prefix-length 2))
 
 (use-package projectile
     :ensure t
     :config
-    (projectile-global-mode)
-    (setq projectile-indexing-method 'alien))
-;    (setq projectile-enable-caching t))
-
-(use-package helm-projectile
-    :ensure t)
+    (projectile-global-mode 1)
+    (setq projectile-indexing-method 'alien)
+)
 
 (use-package web-mode
     :ensure t
@@ -111,7 +108,7 @@
 (use-package tabbar
     :ensure t
     :config
-    (tabbar-mode)
+    (tabbar-mode 1)
     (setq tabbar-buffer-groups-function (lambda ()
         (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
             ((eq major-mode 'dired-mode) "emacs")
@@ -119,11 +116,29 @@
     )
 )
 
-(use-package smooth-scroll
+(use-package smooth-scrolling
     :ensure t
     :config
-    (smooth-scroll-mode)
-    (setq smooth-scroll/vscroll-step-size 5)
+    (smooth-scrolling-mode 1)
+)
+
+(use-package popwin
+    :ensure t
+    :config
+    (popwin-mode 1)
+)
+
+(use-package clean-aindent-mode
+    :ensure t
+    :config
+    (clean-aindent-mode 1)
+    (set 'clean-aindent-is-simple-indent t)
+)
+
+(use-package window-numbering
+    :ensure t
+    :config
+    (window-numbering-mode 1)
 )
 
 ;; load my key bindings as a minor mode, to prevent major modes
