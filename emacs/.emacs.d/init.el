@@ -8,8 +8,10 @@
 (setq auto-save-default nil) ;; #filename#
 (setq inhibit-startup-message t) ;; disable the startup message
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
 (setq scroll-error-top-bottom t) ;; make pgUP and pgDOWN move the cursor when it pegs at EOF
+(setq-default indicate-empty-lines t) ;; similar to vim's tildes
+
 
 ;; indentation
 (setq-default indent-tabs-mode nil) ;; only use spaces for tabs
@@ -28,7 +30,9 @@
 (column-number-mode 1)
 (blink-cursor-mode 0) ;; DON'T blink the cursor
 (electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
+(show-paren-mode 1) ;; highlight the matching paren, bracket, or brace
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
+(desktop-save-mode 1)
 (set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
 ;; initialize my window management keys
@@ -146,6 +150,7 @@
     :config
     (global-undo-tree-mode 1)
 )
+
 
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
