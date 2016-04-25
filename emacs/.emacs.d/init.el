@@ -11,6 +11,7 @@
 (setq mouse-wheel-follow-mouse t) ;; scroll window under mouse
 (setq scroll-error-top-bottom t) ;; make pgUP and pgDOWN move the cursor when it pegs at EOF
 (setq-default indicate-empty-lines t) ;; similar to vim's tildes
+(modify-all-frames-parameters (list (cons 'cursor-type 'bar)))
 
 
 ;; indentation
@@ -28,11 +29,11 @@
 ; (global-linum-mode 1) ;; display line numbers
 (line-number-mode 1) ;; show the line and column number in the modeline
 (column-number-mode 1)
-(blink-cursor-mode 0) ;; DON'T blink the cursor
+;(blink-cursor-mode 0) ;; DON'T blink the cursor
 (electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
 (show-paren-mode 1) ;; highlight the matching paren, bracket, or brace
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
-(desktop-save-mode 1)
+(desktop-save-mode 1) ;; save buffer layout/open file list in ~/.emacs.d/.emacs.desktop
 (set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
 ;; initialize my window management keys
