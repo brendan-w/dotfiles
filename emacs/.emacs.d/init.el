@@ -31,6 +31,7 @@
 (column-number-mode 1)
 ;(blink-cursor-mode 0) ;; DON'T blink the cursor
 (electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
+(setq show-paren-delay 0) ;; highlight matching parens instantaneously
 (show-paren-mode 1) ;; highlight the matching paren, bracket, or brace
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
 (desktop-save-mode 1) ;; save buffer layout/open file list in ~/.emacs.d/.emacs.desktop
