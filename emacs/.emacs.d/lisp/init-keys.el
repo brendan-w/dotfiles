@@ -24,7 +24,6 @@
     (define-key map (kbd "C-c C-c")    'kill-ring-save) ; copy
     (define-key map (kbd "C-v")        'yank) ; paste
     (define-key map (kbd "M-DEL")      'kill-this-buffer)
-    (define-key map (kbd "C-a")        'mark-whole-buffer)
 
     ; (define-key map (kbd "<C-home>")   'recenter-top-bottom) ;; moves things to center/top/bottom of screen
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
@@ -33,8 +32,8 @@
     (define-key map (kbd "<C-next>")   'tabbar-forward-tab)
 
     (define-key map (kbd "M-x")        'helm-M-x)
-    (define-key map (kbd "M-SPC")      'helm-mini)
-    (define-key map (kbd "C-M-SPC")    'helm-projectile-find-file)
+    (define-key map (kbd "M-SPC")      'ranger)
+    (define-key map (kbd "C-M-SPC")    'helm-mini)
 
     (define-key map (kbd "C-d")        'my-select-next)
     (define-key map (kbd "C-S-l")      'mc/edit-lines)
@@ -42,7 +41,8 @@
     (define-key map (kbd "<C-S-up>")   'move-text-up)
     (define-key map (kbd "<C-S-down>") 'move-text-down)
 
-    (define-key map (kbd "C-=")        'er/expand-region)
+    (define-key map (kbd "C-a")        'er/expand-region)
+    (define-key map (kbd "M-a")        'er/contract-region)
 
     map)
   "my-keys-minor-mode keymap.")
