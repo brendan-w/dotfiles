@@ -12,7 +12,8 @@
 (setq scroll-error-top-bottom t) ;; make pgUP and pgDOWN move the cursor when it pegs at EOF
 (setq-default indicate-empty-lines t) ;; similar to vim's tildes
 (modify-all-frames-parameters (list (cons 'cursor-type 'bar)))
-
+(setq-default scroll-conservatively 1) ;; don't scroll by whole pages
+(setq-default scroll-margin 10) ;; keep the cursor N lines from the ends of the window
 
 ;; indentation
 (setq-default indent-tabs-mode nil) ;; only use spaces for tabs
@@ -89,7 +90,7 @@
     :ensure t
     :config
     (global-company-mode 1)
-    (setq company-idle-delay 0.2)
+    (setq company-idle-delay 0.1)
     (setq company-minumum-prefix-length 2))
 
 (use-package projectile
@@ -123,12 +124,6 @@
     )
 )
 
-(use-package smooth-scrolling
-    :ensure t
-    :config
-    (smooth-scrolling-mode 1)
-)
-
 (use-package popwin
     :ensure t
     :config
@@ -155,6 +150,10 @@
 )
 
 (use-package ranger
+    :ensure t
+)
+
+(use-package markdown-mode
     :ensure t
 )
 
