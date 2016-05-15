@@ -151,6 +151,12 @@
 
 (use-package ranger
     :ensure t
+    :config
+    (setq ranger-cleanup-on-disable t)
+    (setq ranger-cleanup-eagerly t)
+    (setq ranger-dont-show-binary t)
+    (setq ranger-max-preview-size 2) ; MB
+    (setq ranger-excluded-extensions '("mkv" "iso" "mp4" "mp3" "zip" "tar.gz" "jpg"))
 )
 
 (use-package markdown-mode
