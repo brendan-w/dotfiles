@@ -68,6 +68,13 @@
     :config
     (load-theme 'monokai t))
 
+(use-package projectile
+    :ensure t
+    :config
+    (projectile-global-mode 1)
+    (setq projectile-indexing-method 'alien)
+)
+
 (use-package helm
     :ensure t
     :config
@@ -75,6 +82,9 @@
     (helm-autoresize-mode 1)
     (setq helm-buffers-fuzzy-matching t)
     (setq helm-split-window-in-side-p t)) ;; keep helm inside the current window/frame
+
+(use-package helm-projectile
+    :ensure t)
 
 (use-package expand-region
     :ensure t)
@@ -92,13 +102,6 @@
     (global-company-mode 1)
     (setq company-idle-delay 0.1)
     (setq company-minumum-prefix-length 2))
-
-(use-package projectile
-    :ensure t
-    :config
-    (projectile-global-mode 1)
-    (setq projectile-indexing-method 'alien)
-)
 
 (use-package web-mode
     :ensure t
@@ -147,16 +150,6 @@
     :ensure t
     :config
     (global-undo-tree-mode 1)
-)
-
-(use-package ranger
-    :ensure t
-    :config
-    (setq ranger-cleanup-on-disable t)
-    (setq ranger-cleanup-eagerly t)
-    (setq ranger-dont-show-binary t)
-    (setq ranger-max-preview-size 2) ; MB
-    (setq ranger-excluded-extensions '("mkv" "iso" "mp4" "mp3" "zip" "tar.gz" "jpg"))
 )
 
 (use-package markdown-mode

@@ -32,7 +32,7 @@
     (define-key map (kbd "<C-next>")   'tabbar-forward-tab)
 
     (define-key map (kbd "M-x")        'helm-M-x)
-    (define-key map (kbd "M-SPC")      'ranger)
+    (define-key map (kbd "M-SPC")      'helm-projectile-find-file)
     (define-key map (kbd "C-M-SPC")    'helm-mini)
 
     (define-key map (kbd "C-d")        'my-select-next)
