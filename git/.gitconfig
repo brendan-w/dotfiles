@@ -5,6 +5,7 @@
 [alias]
     wipe = !git reset --hard && git clean -fd
     unstage = reset --
+    rekt = push origin master --force
 
 [Color]
     [color "branch"]
