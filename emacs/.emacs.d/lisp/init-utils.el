@@ -1,17 +1,4 @@
 
-;; line selection
-
-(defun my-select-line ()
-    (interactive)
-    ;; if there's no selection, start one
-    (if (not mark-active)
-        (set-mark (line-beginning-position))
-    )
-    (next-line)
-    (beginning-of-line)
-)
-
-
 ;; make the backspace key delete whitespace to the next tab stop
 
 (defvar my-offset 4 "My indentation offset. ")

@@ -1,4 +1,14 @@
 
+(defun my-select-line ()
+    (interactive)
+    ;; if there's no selection, start one
+    (if (not mark-active)
+        (set-mark (line-beginning-position))
+    )
+    (next-line)
+    (beginning-of-line)
+)
+
 (defun my-select-next ()
     (interactive)
     (if (region-active-p)
@@ -11,6 +21,26 @@
     (interactive)
     (kill-whole-line)
     (newline)
+)
+
+(defun my-duplicate-line ()
+    (interactive)
+    (set-mark (line-beginning-position))
+    (next-line)
+    (beginning-of-line)
+    (kill-ring-save)
+    (yank)
+)
+
+(defun my-duplicate-line()
+  (interactive)
+  (beginning-of-line)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line)
+  (yank)
+  (beginning-of-line)
 )
 
 ;; global keymappings
@@ -28,6 +58,7 @@
     (define-key map (kbd "C-v")        'yank) ; paste
     (define-key map (kbd "C-k")        'kill-whole-line)
     (define-key map (kbd "M-k")        'my-empty-line)
+    (define-key map (kbd "C-S-d")      'my-duplicate-line)
     (define-key map (kbd "<S-SPC>")    'exchange-point-and-mark)
 
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
