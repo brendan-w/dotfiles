@@ -46,18 +46,6 @@
 (require 'init-utils)
 
 
-;; ---------------- hooks ----------------
-
-(add-hook 'prog-mode-hook (lambda ()
-    (toggle-truncate-lines 1) ; don't wrap lines when I'm coding
-    (add-to-list 'write-file-functions 'delete-trailing-whitespace) ; kill trailing whitespace on save
-))
-
-(add-hook 'text-mode-hook (lambda ()
-    (toggle-truncate-lines 0) ; wrap lines
-    (toggle-word-wrap 1) ; wrap on word boundries
-))
-
 ;; ---------------- packaged stuff ----------------
 
 (require 'init-elpa)
@@ -160,6 +148,27 @@
 (use-package fish-mode
     :ensure t
 )
+
+
+;; ---------------- hooks ----------------
+
+(add-hook 'prog-mode-hook (lambda ()
+    (toggle-truncate-lines 1) ; don't wrap lines when I'm coding
+    (add-to-list 'write-file-functions 'delete-trailing-whitespace) ; kill trailing whitespace on save
+))
+
+(add-hook 'text-mode-hook (lambda ()
+    (toggle-truncate-lines 0) ; wrap lines
+    (toggle-word-wrap 1) ; wrap on word boundries
+))
+
+;; since HTML is mostly textual content, enable word wrapping
+(add-hook 'web-mode-hook (lambda ()
+    (toggle-truncate-lines 0) ; wrap lines
+    (toggle-word-wrap 1) ; wrap on word boundries
+))
+
+
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
 (require 'init-keys)
