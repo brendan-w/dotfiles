@@ -22,7 +22,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --stat --find-renames"
 alias gb="git branch -a"
-alias gt="git log --graph --all --pretty=format:'%C(bold yellow)%h%C(reset)%C(bold red)%d%C(reset)%n%C(white)%s%C(reset)%C(dim white) - %an%C(reset)%n'"
+alias gt="git log --graph --all --pretty=format:'%C(bold dim cyan)%h%C(bold red)%d %C(dim white)%s%n'"
 alias gap="git add -p"
 alias gaa="git add --all ; git status"
 alias gco="git checkout"
@@ -56,4 +56,3 @@ if command -s python > /dev/null 2>&1
         echo "Install using 'pip install --user virtualfish'"
     end
 end
-
