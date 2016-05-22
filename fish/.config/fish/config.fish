@@ -20,6 +20,7 @@ alias rm='rm -r' # probably a bad idea, but we'll see
 alias gl="git log"
 alias gs="git status"
 alias gd="git diff"
+alias gr="git remote -v"
 alias gds="git diff --stat --find-renames"
 alias gb="git branch -a"
 alias gt="git log --graph --all --pretty=format:'%C(bold dim cyan)%h%C(bold red)%d %C(dim white)%s%n'"
