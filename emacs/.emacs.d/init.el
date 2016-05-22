@@ -157,6 +157,9 @@
     :ensure t
 )
 
+(use-package fish-mode
+    :ensure t
+)
 ;; load my key bindings as a minor mode, to prevent major modes
 ;; from overriding them.
 (require 'init-keys)
