@@ -5,7 +5,7 @@
     (if (not mark-active)
         (set-mark (line-beginning-position))
     )
-    (next-line)
+    (next-logical-line)
     (beginning-of-line)
 )
 
