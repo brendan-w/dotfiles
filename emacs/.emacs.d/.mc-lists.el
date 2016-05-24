@@ -3,24 +3,25 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        backspace-whitespace-to-tab-stop
-        c-electric-brace
-        c-electric-lt-gt
-        c-electric-paren
-        c-electric-semi&comma
-        c-electric-slash
-        electric-newline-and-maybe-indent
-        kill-region
-        move-text-down
-        move-text-up
-        my-select-line
-        tab-to-tab-stop
-        ))
+      backspace-whitespace-to-tab-stop
+      c-electric-brace
+      c-electric-lt-gt
+      c-electric-paren
+      c-electric-semi&comma
+      c-electric-slash
+      c-electric-star
+      electric-newline-and-maybe-indent
+      kill-region
+      move-text-down
+      move-text-up
+      my-select-line
+      tab-to-tab-stop
+      ))
 
 (setq mc/cmds-to-run-once
       '(
-        helm-M-x
-        helm-mini
-        helm-projectile-find-file
-        my-select-next
-        ))
+      helm-M-x
+      helm-mini
+      helm-projectile-find-file
+      my-select-next
+      ))
