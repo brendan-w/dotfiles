@@ -154,7 +154,6 @@
 
 (add-hook 'prog-mode-hook (lambda ()
     (toggle-truncate-lines 1) ; don't wrap lines when I'm coding
-    (add-to-list 'write-file-functions 'delete-trailing-whitespace) ; kill trailing whitespace on save
 ))
 
 (add-hook 'text-mode-hook (lambda ()
