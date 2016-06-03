@@ -23,15 +23,6 @@
     (newline)
 )
 
-(defun my-duplicate-line ()
-    (interactive)
-    (set-mark (line-beginning-position))
-    (next-line)
-    (beginning-of-line)
-    (kill-ring-save)
-    (yank)
-)
-
 (defun my-duplicate-line()
   (interactive)
   (beginning-of-line)
@@ -41,7 +32,7 @@
   (next-line)
   (yank)
   (beginning-of-line)
-  )
+)
 
 (defun my-helm-find-files-navigate-forward (orig-fun &rest args)
   (if (file-directory-p (helm-get-selection))
