@@ -57,23 +57,14 @@
     :config
     (load-theme 'monokai t))
 
-(use-package projectile
-    :ensure t
-    :config
-    (projectile-global-mode 1)
-    (setq projectile-indexing-method 'alien)
-)
-
 (use-package helm
     :ensure t
     :config
     (helm-mode 1)
     (helm-autoresize-mode 1)
     (setq helm-buffers-fuzzy-matching t)
-    (setq helm-split-window-in-side-p t)) ;; keep helm inside the current window/frame
-
-(use-package helm-projectile
-    :ensure t)
+    (setq helm-split-window-in-side-p t) ;; keep helm inside the current window/frame
+)
 
 (use-package expand-region
     :ensure t)

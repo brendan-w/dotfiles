@@ -41,7 +41,26 @@
   (next-line)
   (yank)
   (beginning-of-line)
+  )
+
+(defun my-helm-find-files-navigate-forward (orig-fun &rest args)
+  (if (file-directory-p (helm-get-selection))
+      (apply orig-fun args)
+      (helm-maybe-exit-minibuffer)
+  )
 )
+
+(defun my-helm-find-files-navigate-back (orig-fun &rest args)
+  (if (= (length helm-pattern) (length (helm-find-files-initial-input)))
+      (helm-find-files-up-one-level 1)
+      (apply orig-fun args)
+  )
+)
+
+;; Helm keybindings
+(advice-add 'helm-execute-persistent-action :around #'my-helm-find-files-navigate-forward)
+(advice-add 'helm-ff-delete-char-backward :around #'my-helm-find-files-navigate-back)
+(define-key helm-find-files-map (kbd "<return>") 'helm-execute-persistent-action)
 
 ;; global keymappings
 ;; I don't want any of these overriden by major modes
@@ -68,7 +87,7 @@
     (define-key map (kbd "M-DEL")      'kill-this-buffer)
 
     (define-key map (kbd "M-x")        'helm-M-x)
-    (define-key map (kbd "M-SPC")      'helm-projectile-find-file)
+    (define-key map (kbd "M-SPC")      'helm-find-files)
     (define-key map (kbd "C-M-SPC")    'helm-mini)
 
     (define-key map (kbd "C-d")        'my-select-next)
