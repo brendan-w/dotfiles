@@ -20,6 +20,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+      c-electric-pound
       helm-M-x
       helm-mini
       helm-projectile-find-file
