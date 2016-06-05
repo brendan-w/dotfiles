@@ -10,6 +10,7 @@
       c-electric-semi&comma
       c-electric-slash
       c-electric-star
+      c-indent-line-or-region
       electric-newline-and-maybe-indent
       kill-region
       move-text-down
