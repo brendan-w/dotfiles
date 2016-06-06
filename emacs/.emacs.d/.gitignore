@@ -1,4 +1,7 @@
 
+# emacs session saves
+session.*
+
 # Created by https://www.gitignore.io/api/emacs
 
 ### Emacs ###
