@@ -1,8 +1,38 @@
-# enable syntax completion
-try:
+
+# record the current state of the interpreter,
+# so we can clean up after ourselves later
+orig_globals = set(globals())
+
+
+
+########## Syntax Completion ##########
+
+import readline
+import rlcompleter
+readline.parse_and_bind("tab: complete")
+
+
+########## Command History ##########
+
+import atexit
+import os
+
+history_file = os.path.join(os.environ["HOME"], ".python_history")
+
+# using default arg instead of closure, so we can delete the global
+# and leave no trace
+def save_history(history_file=history_file):
     import readline
-except ImportError:
-    print("Module readline not available.")
-else:
-    import rlcompleter
-    readline.parse_and_bind("tab: complete")
+    readline.write_history_file(history_file)
+
+atexit.register(save_history)
+
+# load the current history
+if os.path.exists(history_file):
+    readline.read_history_file(history_file)
+
+
+
+# clean up all globals we just made/brought into scope
+for var in set(globals()).difference(orig_globals):
+    del globals()[var]
