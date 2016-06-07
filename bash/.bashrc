@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Source global definitions if they're available
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
 
 # --------------- general ---------------
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%d-%m-%Y %H:%M   "'

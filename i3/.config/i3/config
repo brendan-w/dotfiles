@@ -157,10 +157,10 @@ bar {
 
 
 # Setup displays
-exec_always ~/.screenlayout/dual.sh
+exec_always ~/.screenlayout.sh
 exec_always feh --bg-max --no-xinerama ~/cool/wallpapers/theslice.jpg
 
 # correct for backwards monitor setup
-workspace 1 output DVI-I-2
-workspace 2 output DVI-I-1
+workspace 1 output VGA1
+workspace 2 output HDMI1
 
