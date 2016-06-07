@@ -1,0 +1,5 @@
+# ignore all virtualenv subdirectories
+*
+
+# but keep the gitignore, and use it like a .gitkeep
+!.gitignore

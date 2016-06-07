@@ -36,7 +36,8 @@ if test $TERM = "xterm"
     set -gx TERM "xterm-256color"
 end
 
-set -gx VIRTUALFISH_HOME "$HOME/.virtualenvs" # won't expand ~
+set -gx VIRTUALFISH_HOME ~/.virtualenvs
+set -gx PYTHONSTARTUP ~/.pythonrc
 set -gx GCC_COLORS "always"
 set -gx PAGER "less -r"
 set -gx EDITOR "vim"
