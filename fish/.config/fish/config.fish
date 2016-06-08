@@ -36,8 +36,11 @@ if test $TERM = "xterm"
     set -gx TERM "xterm-256color"
 end
 
+if test -f ~/.pythonrc
+    set -gx PYTHONSTARTUP ~/.pythonrc
+end
+
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
-set -gx PYTHONSTARTUP ~/.pythonrc
 set -gx GCC_COLORS "always"
 set -gx PAGER "less -r"
 set -gx EDITOR "vim"
