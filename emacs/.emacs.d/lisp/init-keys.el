@@ -52,6 +52,7 @@
 (advice-add 'helm-execute-persistent-action :around #'my-helm-find-files-navigate-forward)
 (advice-add 'helm-ff-delete-char-backward :around #'my-helm-find-files-navigate-back)
 (define-key helm-find-files-map (kbd "<return>") 'helm-execute-persistent-action)
+(define-key helm-find-files-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 ;; global keymappings
 ;; I don't want any of these overriden by major modes
