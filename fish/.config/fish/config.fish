@@ -31,6 +31,10 @@ alias gco="git checkout"
 
 # --------------- env ---------------
 
+set -gx VIRTUALFISH_HOME ~/.virtualenvs
+set -gx GCC_COLORS "always"
+set -gx PAGER "less -r"
+
 # enable 256 color mode
 if test $TERM = "xterm"
     set -gx TERM "xterm-256color"
@@ -40,10 +44,14 @@ if test -f ~/.pythonrc
     set -gx PYTHONSTARTUP ~/.pythonrc
 end
 
-set -gx VIRTUALFISH_HOME ~/.virtualenvs
-set -gx GCC_COLORS "always"
-set -gx PAGER "less -r"
-set -gx EDITOR "vim"
+# editor
+if command -s emacs > /dev/null 2>&1
+    set -gx EDITOR "emacs --quick --no-window-system"
+else if command -s vim > /dev/null 2>&1
+    set -gx EDITOR "vim"
+else
+    set -gx EDITOR "nano"
+end
 
 set -g theme_display_git yes
 set -g theme_display_hg no

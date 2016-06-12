@@ -26,5 +26,6 @@
       helm-M-x
       helm-mini
       helm-projectile-find-file
+      mouse-set-region
       my-select-next
       ))
