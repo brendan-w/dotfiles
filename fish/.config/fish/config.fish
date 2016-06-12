@@ -16,7 +16,6 @@ alias xl='atool -l'
 alias rm='rm -r' # probably a bad idea, but we'll see
 alias cd='cds'
 
-
 # --------------- git ---------------
 alias gl="git log"
 alias gs="git status"
@@ -70,3 +69,8 @@ if command -s python > /dev/null 2>&1
         echo "Install using 'pip install --user virtualfish'"
     end
 end
+
+
+# --------------- files ---------------
+alias notes="eval $EDITOR ~/notes.txt"
+alias contacts="eval $EDITOR ~/contacts.xml"
