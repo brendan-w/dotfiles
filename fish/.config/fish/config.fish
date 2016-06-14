@@ -72,5 +72,7 @@ end
 
 
 # --------------- files ---------------
-alias notes="eval $EDITOR ~/notes.txt"
-alias contacts="eval $EDITOR ~/contacts.xml"
+alias e="eval $EDITOR"
+alias notes="e ~/notes.txt"
+alias projects="e ~/projects.txt"
+alias contacts="e ~/contacts.xml"
