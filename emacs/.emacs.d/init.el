@@ -37,6 +37,7 @@
 (show-paren-mode 1) ;; highlight the matching paren, bracket, or brace
 (delete-selection-mode 1) ;; delete/replace the selection what I start typing in a region
 (desktop-save-mode 1) ;; save buffer layout/open file list in ~/.emacs.d/.emacs.desktop
+(global-auto-revert-mode t) ;; automatically refresh buffers when their files change
 (set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
 ;; initialize my window management keys
