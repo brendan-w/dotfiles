@@ -70,7 +70,6 @@
     (define-key map (kbd "C-k")        'kill-whole-line)
     (define-key map (kbd "M-k")        'my-empty-line)
     (define-key map (kbd "C-S-d")      'my-duplicate-line)
-    (define-key map (kbd "<S-SPC>")    'exchange-point-and-mark)
 
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
     (define-key map (kbd "<C-end>")    'end-of-buffer)
