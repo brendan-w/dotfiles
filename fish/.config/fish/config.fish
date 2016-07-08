@@ -1,6 +1,11 @@
 
 set fish_greeting ""
 
+# print my reminders
+if command -s remind > /dev/null 2>&1 ; and test -f ~/.reminders
+    remind ~/.reminders | sed '/^\s*$/d' | tail -n+2
+end
+
 # --------------- general ---------------
 alias !!=" eval $history[1]" # leading space prevents command from showing up in history
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%d-%m-%Y %H:%M   "'
