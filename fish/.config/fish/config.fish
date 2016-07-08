@@ -20,6 +20,8 @@ alias xx='atool -x'
 alias xl='atool -l'
 alias rm='rm -r' # probably a bad idea, but we'll see
 alias cd='cds'
+alias s='pushd .' # save cwd onto the stack
+alias p='popd' # pop cwd off the stack
 
 # --------------- git ---------------
 alias gl="git log"
