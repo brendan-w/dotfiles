@@ -61,15 +61,16 @@
   (let ((map (make-sparse-keymap)))
 
     (define-key map (kbd "C-z")        'undo-tree-undo) ; act like every other program. also, don't run (suspend-frame)
-    (define-key map (kbd "M-z")        'undo-tree-redo)
-    (define-key map (kbd "C-S-z")      'undo-tree-visualize)
+    (define-key map (kbd "C-S-z")      'undo-tree-redo)
+    (define-key map (kbd "M-z")        'undo-tree-visualize)
     (define-key map (kbd "C-l")        'my-select-line)
     (define-key map (kbd "C-c C-c")    'kill-ring-save) ; copy
-    (define-key map (kbd "C-x C-x")    'kill-region) ; copy
+    (define-key map (kbd "C-x C-x")    'kill-region) ; cut
     (define-key map (kbd "C-v")        'yank) ; paste
     (define-key map (kbd "C-k")        'kill-whole-line)
     (define-key map (kbd "M-k")        'my-empty-line)
     (define-key map (kbd "C-S-d")      'my-duplicate-line)
+    (define-key map (kbd "C-/")        'comment-line)
 
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
     (define-key map (kbd "<C-end>")    'end-of-buffer)
