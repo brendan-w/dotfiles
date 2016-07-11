@@ -13,7 +13,9 @@
       c-electric-star
       c-indent-line-or-region
       electric-newline-and-maybe-indent
+      electric-pair-delete-pair
       kill-region
+      markdown-exdent-or-delete
       move-text-down
       move-text-up
       my-select-line
@@ -26,6 +28,7 @@
       helm-M-x
       helm-mini
       helm-projectile-find-file
+      ignore
       mouse-set-region
       my-select-next
       ))

@@ -40,6 +40,11 @@
 (global-auto-revert-mode t) ;; automatically refresh buffers when their files change
 (set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
+;; enable some commands
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+
+
 ;; initialize my window management keys
 (require 'init-wm)
 
