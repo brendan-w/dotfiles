@@ -50,5 +50,5 @@ from math import *
 from pprint import pprint
 from sys import version_info
 if version_info.major >= 3:
-    print = pprint
+    exec("print = pprint") # string prevents syntax error in python 2
 del version_info

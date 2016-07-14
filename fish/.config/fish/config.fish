@@ -47,8 +47,8 @@ if test $TERM = "xterm"
     set -gx TERM "xterm-256color"
 end
 
-if test -f ~/.pythonrc
-    set -gx PYTHONSTARTUP ~/.pythonrc
+if test -f ~/.pythonrc.py
+    set -gx PYTHONSTARTUP ~/.pythonrc.py
 end
 
 # editor
