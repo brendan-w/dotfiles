@@ -53,7 +53,7 @@ end
 
 # editor
 if command -s emacs > /dev/null 2>&1
-    set -gx EDITOR "emacs --quick --no-window-system"
+    set -gx EDITOR "emacs --no-window-system --no-desktop"
 else if command -s vim > /dev/null 2>&1
     set -gx EDITOR "vim"
 else
