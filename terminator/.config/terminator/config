@@ -7,6 +7,8 @@
     # stop stealing my F keys
     full_screen = <Ctrl><Shift>F11
     help = <Ctrl><Shift>F1
+    split_horiz = <Ctrl><Alt>Down
+    split_vert = <Ctrl><Alt>Right
 
 [profiles]
 [[default]]
