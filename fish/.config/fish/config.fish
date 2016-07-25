@@ -42,6 +42,7 @@ alias gco="git checkout"
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 set -gx GCC_COLORS "always"
 set -gx PAGER "less -r"
+set -gx TERMINAL "terminator" # used by i3-sensible-terminal (will fall back if not found)
 
 # enable 256 color mode
 if test $TERM = "xterm"
