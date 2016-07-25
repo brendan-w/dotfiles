@@ -1,4 +1,4 @@
-function wtf --description "tells me who's spamming my procs, ram or disks"
+function wtf-hw --description "tells me who's spamming my procs, ram or disks"
     echo -n "CPU: "
     ps --no-headers -eo "pid,%cpu,args" --sort -%cpu | head -n 1
 
