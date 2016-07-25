@@ -21,6 +21,7 @@
 (setq-default scroll-conservatively 1) ;; don't scroll by whole pages
 (setq-default scroll-margin 10) ;; keep the cursor N lines from the ends of the window
 (setq ring-bell-function 'ignore) ;; be quite
+(setq vc-follow-symlinks nil) ;; don't ask, always access symlinks as if they're the real file
 
 ;; indentation
 (setq-default indent-tabs-mode nil) ;; only use spaces for tabs
