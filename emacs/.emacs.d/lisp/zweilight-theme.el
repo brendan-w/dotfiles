@@ -1161,14 +1161,14 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; whitespace-mode
    `(whitespace-space ((t (:background ,void-grey :foreground ,void-grey))))
    `(whitespace-hspace ((t (:background ,void-grey :foreground ,void-grey))))
-   `(whitespace-tab ((t (:background ,void-red-pastel+3))))
+   `(whitespace-tab ((t (:background ,void-bg+3))))
    `(whitespace-newline ((t (:foreground ,void-grey))))
-   `(whitespace-trailing ((t (:background ,void-pink))))
+   `(whitespace-trailing ((t (:background ,void-bg+3))))
    `(whitespace-line ((t (:background ,void-bg :foreground ,void-pink+1))))
    `(whitespace-space-before-tab ((t (:background ,void-fg :foreground ,void-fg))))
-   `(whitespace-indentation ((t (:background ,void-cyan :foreground ,void-pink))))
+   `(whitespace-indentation ((t (:background ,void-bg :foreground ,void-fg-1))))
    `(whitespace-empty ((t (:background ,void-cyan))))
-   `(whitespace-space-after-tab ((t (:background ,void-cyan :foreground ,void-pink))))
+   `(whitespace-space-after-tab ((t (:background ,void-bg :foreground ,void-fg-1))))
 ;;;;; wanderlust
    `(wl-highlight-folder-few-face ((t (:foreground ,void-red-pastel+2))))
    `(wl-highlight-folder-many-face ((t (:foreground ,void-red-pastel+3))))
