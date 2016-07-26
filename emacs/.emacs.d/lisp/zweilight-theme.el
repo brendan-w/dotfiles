@@ -157,7 +157,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mode-line-inactive
      ((t (:foreground ,zweilight-green-1
                       :background ,zweilight-bg-05))))
-   `(region ((,class (:background ,zweilight-yellow-1))
+   `(region ((,class (:background ,zweilight-bg-05))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zweilight-bg+2))))
    `(trailing-whitespace ((t (:background ,zweilight-red))))
@@ -593,7 +593,7 @@ Also bind `class' to ((class color) (min-colors 89))."
                       :underline nil
                       :weight bold
                       :box (:line-width -1 :style released-button)))))
-   `(helm-selection ((t (:background ,zweilight-bg+1 :underline nil))))
+   `(helm-selection ((t (:background ,zweilight-green :underline nil))))
    `(helm-selection-line ((t (:background ,zweilight-bg+1))))
    `(helm-visible-mark ((t (:foreground ,zweilight-bg :background ,zweilight-yellow-2))))
    `(helm-candidate-number ((t (:foreground ,zweilight-green+4 :background ,zweilight-bg-1))))
@@ -623,7 +623,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(helm-grep-lineno ((t (:foreground ,zweilight-fg-1 :background ,zweilight-bg))))
    `(helm-grep-match ((t (:foreground nil :background nil :inherit helm-match))))
    `(helm-grep-running ((t (:foreground ,zweilight-red :background ,zweilight-bg))))
-   `(helm-match ((t (:foreground ,zweilight-orange :background ,zweilight-bg-1 :weight bold))))
+   `(helm-match ((t (:foreground ,zweilight-bg-1 :weight bold))))
    `(helm-moccur-buffer ((t (:foreground ,zweilight-cyan :background ,zweilight-bg))))
    `(helm-mu-contacts-address-face ((t (:foreground ,zweilight-fg-1 :background ,zweilight-bg))))
    `(helm-mu-contacts-name-face ((t (:foreground ,zweilight-fg :background ,zweilight-bg))))
