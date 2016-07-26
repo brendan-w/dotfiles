@@ -46,6 +46,7 @@
 (global-whitespace-mode 1)
 
 ;; line numbers
+(setq linum-format "%4d")
 (require 'linum-off)
 (global-linum-mode 1) ;; display line numbers
 
