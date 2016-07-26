@@ -254,15 +254,15 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(avy-lead-face
      ((t (:foreground ,void-orange :background ,void-bg :inverse-video nil :weight bold))))
 ;;;;; company-mode
-   `(company-tooltip ((t (:foreground ,void-fg :background ,void-grey))))
+   `(company-tooltip ((t (:foreground ,void-fg :background ,void-bg+3))))
    `(company-tooltip-annotation ((t (:foreground ,void-fg :background ,void-grey))))
    `(company-tooltip-annotation-selection ((t (:foreground ,void-fg :background ,void-blue))))
-   `(company-tooltip-selection ((t (:foreground ,void-fg :background ,void-blue))))
-   `(company-tooltip-mouse ((t (:background ,void-blue))))
-   `(company-tooltip-common ((t (:foreground ,void-fg-1))))
-   `(company-tooltip-common-selection ((t (:foreground ,void-fg-1))))
+   `(company-tooltip-selection ((t (:foreground ,void-bg :background ,void-blue))))
+   `(company-tooltip-mouse ((t (:foreground ,void-bg :background ,void-blue))))
+   `(company-tooltip-common ((t (:foreground ,void-cyan :weight bold))))
+   `(company-tooltip-common-selection ((t (:foreground ,void-cyan :weight bold))))
    `(company-scrollbar-fg ((t (:background ,void-blue))))
-   `(company-scrollbar-bg ((t (:background ,void-fg))))
+   `(company-scrollbar-bg ((t (:background ,void-grey-1))))
    `(company-preview ((t (:background ,void-fg-1))))
    `(company-preview-common ((t (:foreground ,void-fg-1 :background ,void-blue))))
 ;;;;; bm
