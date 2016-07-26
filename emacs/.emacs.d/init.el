@@ -61,9 +61,6 @@
 ;; initialize my window management keys
 (require 'init-wm)
 
-;; bring in some of my util functions/keys
-(require 'init-utils)
-
 
 ;; ---------------- packaged stuff ----------------
 
