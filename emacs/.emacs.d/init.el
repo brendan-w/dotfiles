@@ -18,27 +18,15 @@
 (setq scroll-error-top-bottom t) ;; make pgUP and pgDOWN move the cursor when it pegs at EOF
 (setq-default indicate-empty-lines t) ;; similar to vim's tildes
 (modify-all-frames-parameters (list (cons 'cursor-type 'bar)))
+;(blink-cursor-mode 0) ;; DON'T blink the cursor
 (setq-default scroll-conservatively 1) ;; don't scroll by whole pages
 (setq-default scroll-margin 10) ;; keep the cursor N lines from the ends of the window
 (setq ring-bell-function 'ignore) ;; be quite
 (setq vc-follow-symlinks nil) ;; don't ask, always access symlinks as if they're the real file
-
-;; indentation
-(setq-default indent-tabs-mode nil) ;; only use spaces for tabs
-(setq-default tab-width 4) ;; the width of actual TAB characters
-(setq c-basic-offset 4) ;; indentation step for C mode
-(setq c-default-style "bsd") ;; Allman style
-
-;; show me whitespace
-(setq whitespace-style '(face tabs spaces trailing space-before-tab indentation space-after-tab space-mark tab-mark))
-(global-whitespace-mode 1)
-
 (tool-bar-mode 0) ;; hide the gui toolbar
 (menu-bar-mode 0) ;; hide the menu bar
-; (global-linum-mode 1) ;; display line numbers
 (line-number-mode 1) ;; show the line and column number in the modeline
 (column-number-mode 1)
-;(blink-cursor-mode 0) ;; DON'T blink the cursor
 (electric-pair-mode) ;; auto close parens/quotes (apparently, this is ok in Emacs >= 24.4)
 (setq show-paren-delay 0) ;; highlight matching parens instantaneously
 (show-paren-mode 1) ;; highlight the matching paren, bracket, or brace
@@ -47,10 +35,27 @@
 (global-auto-revert-mode t) ;; automatically refresh buffers when their files change
 (set-face-attribute 'default nil :height 100) ;; default font size to 10pt
 
+;; indentation
+(setq-default indent-tabs-mode nil) ;; only use spaces for tabs
+(setq-default tab-width 4) ;; the width of actual TAB characters
+(setq c-basic-offset 4) ;; indentation step for C mode
+(setq c-default-style "bsd") ;; Allman style
+
+;; show me whitespace
+(setq whitespace-style '(face tabs trailing space-before-tab indentation space-after-tab tab-mark))
+(global-whitespace-mode 1)
+
+;; line numbers
+(require 'linum-off)
+(global-linum-mode 1) ;; display line numbers
+
 ;; enable some commands
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; theme
+(require 'zweilight-theme)
+(load-theme 'zweilight t)
 
 ;; initialize my window management keys
 (require 'init-wm)
@@ -62,13 +67,6 @@
 ;; ---------------- packaged stuff ----------------
 
 (require 'init-elpa)
-
-;; load packages
-
-(use-package monokai-theme
-    :ensure t
-    :config
-    (load-theme 'monokai t))
 
 (use-package helm
     :ensure t
