@@ -40,6 +40,7 @@
     ("void-orange"        . "#ffa500")
     ("void-blue"          . "#0bafed")
     ("void-green"         . "#65ba08")
+    ("void-red"           . "#E81A14")
     ("void-pink"          . "#ee11dd")
     ("void-pink+1"        . "#DC8CC3")
     ("void-bg"            . "#1b1a24")
@@ -1087,14 +1088,23 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(speedbar-separator-face ((t (:foreground ,void-bg :background ,void-blue))))
    `(speedbar-tag-face ((t (:foreground ,void-cyan))))
 ;;;;; tabbar
+   `(tabbar-default ((t (:foreground ,void-fg
+                        :background ,void-bg+3))))
    `(tabbar-button ((t (:foreground ,void-fg
-                                    :background ,void-bg))))
-   `(tabbar-selected ((t (:foreground ,void-fg
-                                      :background ,void-bg
-                                      :box (:line-width -1 :style pressed-button)))))
+                        :background ,void-bg+3))))
    `(tabbar-unselected ((t (:foreground ,void-fg
-                                        :background ,void-green-pastel-1
-                                        :box (:line-width -1 :style released-button)))))
+                            :background ,void-bg+3
+                            ;; :box (:line-width -1 :style released-button)
+                            ))))
+   `(tabbar-selected ((t (:foreground ,void-bg+3
+                           :background ,void-blue
+                          ;; :box (:line-width -1 :style pressed-button)
+                          ))))
+   `(tabbar-modified ((t (:foreground ,void-red
+                          :background ,void-bg+3))))
+   `(tabbar-selected-modified ((t (:foreground ,void-bg+3
+                                   :background ,void-red))))
+
 ;;;;; term
    `(term-color-black ((t (:foreground ,void-bg
                                        :background ,void-blue))))
