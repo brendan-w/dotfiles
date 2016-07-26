@@ -150,13 +150,13 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(menu ((t (:foreground ,zweilight-fg :background ,zweilight-bg))))
    `(minibuffer-prompt ((t (:foreground ,zweilight-yellow))))
    `(mode-line
-     ((,class (:foreground ,zweilight-green+1
-                           :background ,zweilight-bg-1))
+     ((,class (:foreground ,zweilight-fg
+               :background ,zweilight-green))
       (t :inverse-video t)))
    `(mode-line-buffer-id ((t (:foreground ,zweilight-yellow :weight bold))))
    `(mode-line-inactive
      ((t (:foreground ,zweilight-green-1
-                      :background ,zweilight-bg-05))))
+          :background ,zweilight-bg-05))))
    `(region ((,class (:background ,zweilight-bg-05))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zweilight-bg+2))))
@@ -584,19 +584,22 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; helm
    `(helm-header
      ((t (:foreground ,zweilight-green
-                      :background ,zweilight-bg
-                      :underline nil
-                      :box nil))))
+          :background ,zweilight-bg
+          :underline nil
+          :box nil))))
    `(helm-source-header
      ((t (:foreground ,zweilight-yellow
-                      :background ,zweilight-bg-1
-                      :underline nil
-                      :weight bold
-                      :box (:line-width -1 :style released-button)))))
-   `(helm-selection ((t (:background ,zweilight-green :underline nil))))
+          ;; :background ,zweilight-bg-1
+          :underline nil
+          :weight bold
+          ;; :box (:line-width -1 :style released-button)
+          :box nil))))
+   `(helm-selection ((t (:background ,zweilight-bg-05 :underline nil))))
+   ;; `(helm-selection ((t (:background ,zweilight-green :underline nil))))
    `(helm-selection-line ((t (:background ,zweilight-bg+1))))
    `(helm-visible-mark ((t (:foreground ,zweilight-bg :background ,zweilight-yellow-2))))
-   `(helm-candidate-number ((t (:foreground ,zweilight-green+4 :background ,zweilight-bg-1))))
+   ;; `(helm-candidate-number ((t (:foreground ,zweilight-green+4 :background ,zweilight-bg-1))))
+   `(helm-candidate-number ((t (:foreground nil :background nil))))
    `(helm-separator ((t (:foreground ,zweilight-red :background ,zweilight-bg))))
    `(helm-time-zone-current ((t (:foreground ,zweilight-green+2 :background ,zweilight-bg))))
    `(helm-time-zone-home ((t (:foreground ,zweilight-red :background ,zweilight-bg))))
