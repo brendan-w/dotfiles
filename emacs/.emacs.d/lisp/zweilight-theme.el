@@ -46,8 +46,10 @@
     ("void-bg+1"          . "#1f1d2e")
     ("void-bg+2"          . "#211f30")
     ("void-bg+3"          . "#252634")
+    ("void-fg+1"          . "#B1B0E8")
     ("void-fg"            . "#8584ae")
     ("void-fg-1"          . "#4c406d")
+    ("void-purple"        . "#4E3296")
     ("void-red-pastel"    . "#8C5353")
     ("void-red-pastel+1"  . "#9C6363")
     ("void-red-pastel+2"  . "#AC7373")
@@ -137,8 +139,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(menu ((t (:foreground ,void-fg :background ,void-bg))))
    `(minibuffer-prompt ((t (:foreground ,void-cyan))))
    `(mode-line
-     ((,class (:foreground ,void-fg
-               :background ,void-fg-1))
+     ((,class (:foreground ,void-fg+1
+               :background ,void-purple))
       (t :inverse-video t)))
    `(mode-line-buffer-id ((t (:foreground ,void-cyan :weight bold))))
    `(mode-line-inactive
