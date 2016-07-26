@@ -14,6 +14,7 @@
       c-indent-line-or-region
       electric-newline-and-maybe-indent
       electric-pair-delete-pair
+      eval-python-in-place
       indent-for-tab-command
       kill-region
       markdown-exdent-or-delete

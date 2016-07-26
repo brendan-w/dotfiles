@@ -76,6 +76,7 @@
     (helm-autoresize-mode 1)
     (setq helm-buffers-fuzzy-matching t)
     (setq helm-split-window-in-side-p t) ;; keep helm inside the current window/frame
+    (setq helm-ff-newfile-prompt-p nil) ;; don't ask for confirmation when creating new files
 )
 
 (use-package expand-region

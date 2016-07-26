@@ -1,4 +1,14 @@
 
+(defun eval-python-in-place ()
+  "runs the current region as a python command, and inserts the result"
+  (interactive)
+  (setq result (shell-command-to-string (concat "python3 -c 'print(("
+                                           (buffer-substring (mark) (point))
+                                           "), end=\"\")'")))
+  (call-interactively 'delete-region)
+  (insert result)
+)
+
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
   (interactive)
@@ -90,6 +100,7 @@
     (define-key map (kbd "M-k")        'my-empty-line)
     (define-key map (kbd "C-S-d")      'my-duplicate-line)
     (define-key map (kbd "C-/")        'comment-line)
+    (define-key map (kbd "M-RET")      'eval-python-in-place)
 
     (define-key map (kbd "<C-home>")   'beginning-of-buffer)
     (define-key map (kbd "<C-end>")    'end-of-buffer)
