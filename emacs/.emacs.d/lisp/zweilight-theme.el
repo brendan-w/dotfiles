@@ -41,8 +41,12 @@
     ("void-blue"          . "#0bafed")
     ("void-green"         . "#65ba08")
     ("void-red"           . "#E81A14")
+    ("void-red-1"         . "#CF1712")
     ("void-pink"          . "#ee11dd")
     ("void-pink+1"        . "#DC8CC3")
+    ("void-grey+1"        . "#656555")
+    ("void-grey"          . "#4F4F4F")
+    ("void-grey-1"        . "#494949")
     ("void-bg"            . "#1b1a24")
     ("void-bg+1"          . "#1f1d2e")
     ("void-bg+2"          . "#211f30")
@@ -50,7 +54,6 @@
     ("void-fg+1"          . "#B1B0E8")
     ("void-fg"            . "#8584ae")
     ("void-fg-1"          . "#4c406d")
-    ("void-purple"        . "#4E3296")
     ("void-red-pastel"    . "#8C5353")
     ("void-red-pastel+1"  . "#9C6363")
     ("void-red-pastel+2"  . "#AC7373")
@@ -59,10 +62,7 @@
     ("void-cyan"          . "#b4f5fe")
     ("void-cyan-1"        . "#8CD0D3")
     ("void-cyan-2"        . "#6CA0A3")
-    ("void-cyan-3"        . "#5C888B")
-    ("void-green-pastel"  . "#656555")
-    ("void-green-pastel-1". "#4F4F4F")
-    ("void-green-pastel-2". "#494949"))
+    ("void-cyan-3"        . "#5C888B"))
   "List of Zweilight colors.
 Each element has the form (NAME . HEX).
 
@@ -108,7 +108,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(highlight ((t (:background ,void-bg+3))))
    `(success ((t (:foreground ,void-fg-1 :weight bold))))
    `(warning ((t (:foreground ,void-fg :weight bold))))
-   `(tooltip ((t (:foreground ,void-fg :background ,void-green-pastel-1))))
+   `(tooltip ((t (:foreground ,void-fg :background ,void-grey))))
 ;;;;; compilation
    `(compilation-column-face ((t (:foreground ,void-cyan))))
    `(compilation-enter-directory-face ((t (:foreground ,void-fg-1))))
@@ -125,7 +125,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(compilation-mode-line-fail ((t (:foreground ,void-pink :weight bold))))
    `(compilation-mode-line-run ((t (:foreground ,void-cyan :weight bold))))
 ;;;;; completions
-   `(completions-annotations ((t (:foreground ,void-green-pastel))))
+   `(completions-annotations ((t (:foreground ,void-grey+1))))
 ;;;;; grep
    `(grep-context-face ((t (:foreground ,void-fg))))
    `(grep-error-face ((t (:foreground ,void-red-pastel+3 :weight bold :underline t))))
@@ -133,17 +133,17 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(grep-match-face ((t (:foreground ,void-fg :weight bold))))
    `(match ((t (:background ,void-blue :foreground ,void-fg :weight bold))))
 ;;;;; isearch
-   `(isearch ((t (:foreground ,void-yellow :weight bold :background ,void-fg))))
+   `(isearch ((t (:foreground ,void-yellow :w eight bold :background ,void-fg))))
    `(isearch-fail ((t (:foreground ,void-fg :background ,void-red-pastel))))
    `(lazy-highlight ((t (:foreground ,void-yellow :weight bold :background ,void-bg+3))))
 
    `(menu ((t (:foreground ,void-fg :background ,void-bg))))
    `(minibuffer-prompt ((t (:foreground ,void-cyan))))
    `(mode-line
-     ((,class (:foreground ,void-fg+1
-               :background ,void-purple))
+     ((,class (:foreground ,void-bg
+               :background ,void-blue))
       (t :inverse-video t)))
-   `(mode-line-buffer-id ((t (:foreground ,void-cyan :weight bold))))
+   `(mode-line-buffer-id ((t (:foreground ,void-bg :weight bold))))
    `(mode-line-inactive
      ((t (:foreground ,void-fg-1
           :background ,void-bg+3))))
@@ -191,12 +191,12 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;; Third-party
 ;;;;; ace-jump
    `(ace-jump-face-background
-     ((t (:foreground ,void-green-pastel :background ,void-bg :inverse-video nil))))
+     ((t (:foreground ,void-grey+1 :background ,void-bg :inverse-video nil))))
    `(ace-jump-face-foreground
      ((t (:foreground ,void-fg-1 :background ,void-bg :inverse-video nil))))
 ;;;;; ace-window
    `(aw-background-face
-     ((t (:foreground ,void-green-pastel :background ,void-bg :inverse-video nil))))
+     ((t (:foreground ,void-grey+1 :background ,void-bg :inverse-video nil))))
    `(aw-leading-char-face ((t (:inherit aw-mode-line-face))))
 ;;;;; android mode
    `(android-mode-debug-face ((t (:foreground ,void-bg))))
@@ -243,7 +243,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(popup-isearch-match ((t (:background ,void-bg :foreground ,void-fg))))
 ;;;;; avy
    `(avy-background-face
-     ((t (:foreground ,void-green-pastel :background ,void-bg :inverse-video nil))))
+     ((t (:foreground ,void-grey+1 :background ,void-bg :inverse-video nil))))
    `(avy-lead-face-0
      ((t (:foreground ,void-green :background ,void-bg :inverse-video nil :weight bold))))
    `(avy-lead-face-1
@@ -253,8 +253,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(avy-lead-face
      ((t (:foreground ,void-orange :background ,void-bg :inverse-video nil :weight bold))))
 ;;;;; company-mode
-   `(company-tooltip ((t (:foreground ,void-fg :background ,void-green-pastel-1))))
-   `(company-tooltip-annotation ((t (:foreground ,void-fg :background ,void-green-pastel-1))))
+   `(company-tooltip ((t (:foreground ,void-fg :background ,void-grey))))
+   `(company-tooltip-annotation ((t (:foreground ,void-fg :background ,void-grey))))
    `(company-tooltip-annotation-selection ((t (:foreground ,void-fg :background ,void-blue))))
    `(company-tooltip-selection ((t (:foreground ,void-fg :background ,void-blue))))
    `(company-tooltip-mouse ((t (:background ,void-blue))))
@@ -270,7 +270,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(bm-fringe-persistent-face ((t (:background ,void-fg-1 :foreground ,void-bg))))
    `(bm-persistent-face ((t (:background ,void-fg-1 :foreground ,void-bg))))
 ;;;;; cider
-   `(cider-result-overlay-face ((t (:foreground ,void-green-pastel :background unspecified))))
+   `(cider-result-overlay-face ((t (:foreground ,void-grey+1 :background unspecified))))
    `(cider-enlightened-face ((t (:box (:color ,void-fg :line-width -1)))))
    `(cider-enlightened-local-face ((t (:weight bold :foreground ,void-bg))))
    `(cider-deprecated-face ((t (:background ,void-yellow))))
@@ -322,7 +322,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(diff-hl-delete ((,class (:foreground ,void-red-pastel+4 :background ,void-red-pastel+3))))
    `(diff-hl-insert ((,class (:foreground ,void-bg :background ,void-fg-1))))
 ;;;;; dim-autoload
-   `(dim-autoload-cookie-line ((t :foreground ,void-green-pastel-1)))
+   `(dim-autoload-cookie-line ((t :foreground ,void-grey)))
 ;;;;; dired+
    `(diredp-display-msg ((t (:foreground ,void-cyan-1))))
    `(diredp-compressed-file-suffix ((t (:foreground ,void-fg))))
@@ -357,10 +357,10 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ediff-current-diff-Ancestor ((t (:foreground ,void-fg :background ,void-red-pastel))))
    `(ediff-current-diff-B ((t (:foreground ,void-fg :background ,void-fg-1))))
    `(ediff-current-diff-C ((t (:foreground ,void-fg :background ,void-bg))))
-   `(ediff-even-diff-A ((t (:background ,void-green-pastel-1))))
-   `(ediff-even-diff-Ancestor ((t (:background ,void-green-pastel-1))))
-   `(ediff-even-diff-B ((t (:background ,void-green-pastel-1))))
-   `(ediff-even-diff-C ((t (:background ,void-green-pastel-1))))
+   `(ediff-even-diff-A ((t (:background ,void-grey))))
+   `(ediff-even-diff-Ancestor ((t (:background ,void-grey))))
+   `(ediff-even-diff-B ((t (:background ,void-grey))))
+   `(ediff-even-diff-C ((t (:background ,void-grey))))
    `(ediff-fine-diff-A ((t (:foreground ,void-fg :background ,void-red-pastel+2 :weight bold))))
    `(ediff-fine-diff-Ancestor ((t (:foreground ,void-fg :background ,void-red-pastel+2 weight bold))))
    `(ediff-fine-diff-B ((t (:foreground ,void-fg :background ,void-fg-1 :weight bold))))
@@ -586,7 +586,7 @@ Also bind `class' to ((class color) (min-colors 89))."
           :box nil))))
    `(helm-selection ((t (:background ,void-bg+3 :underline nil))))
    ;; `(helm-selection ((t (:background ,void-fg-1 :underline nil))))
-   `(helm-selection-line ((t (:background ,void-green-pastel-1))))
+   `(helm-selection-line ((t (:background ,void-grey))))
    `(helm-visible-mark ((t (:foreground ,void-bg :background ,void-yellow))))
    ;; `(helm-candidate-number ((t (:foreground ,void-yellow :background ,void-blue))))
    `(helm-candidate-number ((t (:foreground nil :background nil))))
@@ -603,7 +603,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(helm-buffer-not-saved ((t (:foreground ,void-pink :background ,void-bg))))
    `(helm-buffer-process ((t (:foreground ,void-orange :background ,void-bg))))
    `(helm-buffer-saved-out ((t (:foreground ,void-fg :background ,void-bg))))
-   `(helm-buffer-size ((t (:foreground ,void-green-pastel :background ,void-bg))))
+   `(helm-buffer-size ((t (:foreground ,void-grey+1 :background ,void-bg))))
    `(helm-ff-directory ((t (:foreground ,void-orange :background ,void-bg :weight bold))))
    `(helm-ff-file ((t (:foreground ,void-fg :background ,void-bg :weight normal))))
    `(helm-ff-executable ((t (:foreground ,void-fg-1 :background ,void-bg :weight normal))))
@@ -613,15 +613,15 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(helm-grep-cmd-line ((t (:foreground ,void-orange :background ,void-bg))))
    `(helm-grep-file ((t (:foreground ,void-fg :background ,void-bg))))
    `(helm-grep-finish ((t (:foreground ,void-fg-1 :background ,void-bg))))
-   `(helm-grep-lineno ((t (:foreground ,void-green-pastel :background ,void-bg))))
+   `(helm-grep-lineno ((t (:foreground ,void-grey+1 :background ,void-bg))))
    `(helm-grep-match ((t (:foreground nil :background nil :inherit helm-match))))
    `(helm-grep-running ((t (:foreground ,void-pink :background ,void-bg))))
    `(helm-match ((t (:foreground ,void-blue :weight bold))))
    `(helm-moccur-buffer ((t (:foreground ,void-orange :background ,void-bg))))
-   `(helm-mu-contacts-address-face ((t (:foreground ,void-green-pastel :background ,void-bg))))
+   `(helm-mu-contacts-address-face ((t (:foreground ,void-grey+1 :background ,void-bg))))
    `(helm-mu-contacts-name-face ((t (:foreground ,void-fg :background ,void-bg))))
 ;;;;; helm-swoop
-   `(helm-swoop-target-line-face ((t (:foreground ,void-fg :background ,void-green-pastel-1))))
+   `(helm-swoop-target-line-face ((t (:foreground ,void-fg :background ,void-grey))))
    `(helm-swoop-target-word-face ((t (:foreground ,void-cyan :background ,void-fg :weight bold))))
 ;;;;; hl-line-mode
    `(hl-line-face ((,class (:background ,void-bg+3))
@@ -629,7 +629,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(hl-line ((,class (:background ,void-bg+3)) ; old emacsen
               (t :weight bold)))
 ;;;;; hl-sexp
-   `(hl-sexp-face ((,class (:background ,void-green-pastel-1))
+   `(hl-sexp-face ((,class (:background ,void-grey))
                    (t :weight bold)))
 ;;;;; hydra
    `(hydra-face-red ((t (:foreground ,void-red-pastel+3 :background ,void-bg))))
@@ -643,7 +643,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ivy-remote ((t (:foreground ,void-cyan-1 :background ,void-bg))))
    `(ivy-subdir ((t (:foreground ,void-cyan :background ,void-bg))))
    `(ivy-current-match ((t (:foreground ,void-cyan :weight bold :underline t))))
-   `(ivy-minibuffer-match-face-1 ((t (:background ,void-green-pastel-1))))
+   `(ivy-minibuffer-match-face-1 ((t (:background ,void-grey))))
    `(ivy-minibuffer-match-face-2 ((t (:background ,void-fg-1))))
    `(ivy-minibuffer-match-face-3 ((t (:background ,void-fg-1))))
    `(ivy-minibuffer-match-face-4 ((t (:background ,void-bg))))
@@ -691,15 +691,15 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; ledger-mode
    `(ledger-font-payee-uncleared-face ((t (:foreground ,void-red-pastel+3 :weight bold))))
    `(ledger-font-payee-cleared-face ((t (:foreground ,void-fg :weight normal))))
-   `(ledger-font-xact-highlight-face ((t (:background ,void-green-pastel-1))))
+   `(ledger-font-xact-highlight-face ((t (:background ,void-grey))))
    `(ledger-font-pending-face ((t (:foreground ,void-fg weight: normal))))
    `(ledger-font-other-face ((t (:foreground ,void-fg))))
    `(ledger-font-posting-account-face ((t (:foreground ,void-blue))))
    `(ledger-font-posting-account-cleared-face ((t (:foreground ,void-fg))))
    `(ledger-font-posting-account-pending-face ((t (:foreground ,void-fg))))
    `(ledger-font-posting-amount-face ((t (:foreground ,void-fg))))
-   `(ledger-occur-narrowed-face ((t (:foreground ,void-green-pastel :invisible t))))
-   `(ledger-occur-xact-face ((t (:background ,void-green-pastel-1))))
+   `(ledger-occur-narrowed-face ((t (:foreground ,void-grey+1 :invisible t))))
+   `(ledger-occur-xact-face ((t (:background ,void-grey))))
    `(ledger-font-comment-face ((t (:foreground ,void-fg-1))))
    `(ledger-font-reconciler-uncleared-face ((t (:foreground ,void-red-pastel+3 :weight bold))))
    `(ledger-font-reconciler-cleared-face ((t (:foreground ,void-fg :weight normal))))
@@ -740,32 +740,32 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(macrostep-macro-face
      ((t (:underline t))))
 ;;;;; magit
-;;;;;; headings and diffs`(magit-section-highlight           ((t (:background ,void-green-pastel-2   `(magit-section-heading             ((t (:foreground ,void-cyan :weight bold))))
+;;;;;; headings and diffs`(magit-section-highlight           ((t (:background ,void-grey-1   `(magit-section-heading             ((t (:foreground ,void-cyan :weight bold))))
    `(magit-section-heading-selection   ((t (:foreground ,void-fg :weight bold))))
    `(magit-diff-file-headi         ((t (:weight bold))))
-   `(magit-diff-file-headiighlight ((t (:background ,void-green-pastel-2 bold))))
-   `(magit-diff-file-heading-selection ((t (:background ,void-green-pastel-2                                                    :foreground ,void-fg :weight bold))))
-   `(magit-diff-hunk-heading           ((t (:background ,void-green-pastel-1))))
+   `(magit-diff-file-headiighlight ((t (:background ,void-grey-1 bold))))
+   `(magit-diff-file-heading-selection ((t (:background ,void-grey-1                                                    :foreground ,void-fg :weight bold))))
+   `(magit-diff-hunk-heading           ((t (:background ,void-grey))))
    `(magit-diff-hunk-heading-highlight ((t (:background ,void-fg))))
    `(magit-diff-hunk-heading-selection ((t (:background ,void-fg
                                                         :foreground ,void-fg))))
    `(magit-diff-lines-heading          ((t (:background ,void-fg
                                                     :foreground ,void-fg))))
-   `(magit-diff-context-highlight      ((t (:background ,void-green-pastel-2                                                    :foreground "grey70"))))
+   `(magit-diff-context-highlight      ((t (:background ,void-grey-1                                                    :foreground "grey70"))))
    `(magit-diffstat-added   ((t (:foreground ,void-yellow))))
    `(magit-diffstat-removed ((t (:foreground ,void-pink))))
 ;;;;;; popup
    `(magit-popup-heading             ((t (:foreground ,void-cyan  :weight bold))))
    `(magit-popup-key                 ((t (:foreground ,void-fg-1 :weight bold))))
    `(magit-popup-argument            ((t (:foreground ,void-fg-1   :weight bold))))
-   `(magit-popup-disabled-argument   ((t (:foreground ,void-green-pastel    :weight normal))))
+   `(magit-popup-disabled-argument   ((t (:foreground ,void-grey+1    :weight normal))))
    `(magit-popup-option-value        ((t (:foreground ,void-cyan-2  :weight bold))))
 ;;;;;; process
    `(magit-process-ok    ((t (:foreground ,void-fg-1  :weight bold))))
    `(magit-process-ng    ((t (:foreground ,void-pink    :weight bold))))
 ;;;;;; log
    `(magit-log-author    ((t (:foreground ,void-fg))))
-   `(magit-log-date      ((t (:foreground ,void-green-pastel))))
+   `(magit-log-date      ((t (:foreground ,void-grey+1))))
    `(magit-log-graph     ((t (:foreground ,void-yellow))))
 ;;;;;; sequence
    `(magit-sequence-pick ((t (:foreground ,void-yellow))))
@@ -773,8 +773,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(magit-sequence-part ((t (:foreground ,void-cyan))))
    `(magit-sequence-head ((t (:foreground ,void-cyan-1))))
    `(magit-sequence-drop ((t (:foreground ,void-pink))))
-   `(magit-sequence-done ((t (:foreground ,void-green-pastel))))
-   `(magit-sequence-onto ((t (:foreground ,void-green-pastel))))
+   `(magit-sequence-done ((t (:foreground ,void-grey+1))))
+   `(magit-sequence-onto ((t (:foreground ,void-grey+1))))
 ;;;;;; bisect
    `(magit-bisect-good ((t (:foreground ,void-fg-1))))
    `(magit-bisect-skip ((t (:foreground ,void-cyan))))
@@ -882,7 +882,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mumamo-background-chunk-submode1 ((t (:background ,void-blue))))
    `(mumamo-background-chunk-submode2 ((t (:background ,void-fg))))
    `(mumamo-background-chunk-submode3 ((t (:background ,void-blue))))
-   `(mumamo-background-chunk-submode4 ((t (:background ,void-green-pastel-1))))
+   `(mumamo-background-chunk-submode4 ((t (:background ,void-grey))))
 ;;;;; org-mode
    `(org-agenda-date-today
      ((t (:foreground ,void-yellow :slant italic :weight bold))) t)
@@ -957,7 +957,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; powerline
    `(powerline-active1 ((t (:background ,void-bg+3 :inherit mode-line))))
    `(powerline-active2 ((t (:background ,void-fg :inherit mode-line))))
-   `(powerline-inactive1 ((t (:background ,void-green-pastel-1 :inherit mode-line-inactive))))
+   `(powerline-inactive1 ((t (:background ,void-grey :inherit mode-line-inactive))))
    `(powerline-inactive2 ((t (:background ,void-blue :inherit mode-line-inactive))))
 ;;;;; proofgeneral
    `(proof-active-area-face ((t (:underline t))))
@@ -1035,7 +1035,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    ;; use (setq sml/theme nil) to enable Zweilight for sml
    `(sml/global ((,class (:foreground ,void-fg :weight bold))))
    `(sml/modes ((,class (:foreground ,void-cyan :weight bold))))
-   `(sml/minor-modes ((,class (:foreground ,void-green-pastel :weight bold))))
+   `(sml/minor-modes ((,class (:foreground ,void-grey+1 :weight bold))))
    `(sml/filename ((,class (:foreground ,void-cyan :weight bold))))
    `(sml/line-number ((,class (:foreground ,void-cyan-1 :weight bold))))
    `(sml/col-number ((,class (:foreground ,void-orange :weight bold))))
@@ -1103,7 +1103,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(tabbar-modified ((t (:foreground ,void-red
                           :background ,void-bg+3))))
    `(tabbar-selected-modified ((t (:foreground ,void-bg+3
-                                   :background ,void-red))))
+                                   :background ,void-red-1 ))))
 
 ;;;;; term
    `(term-color-black ((t (:foreground ,void-bg
@@ -1121,7 +1121,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(term-color-cyan ((t (:foreground ,void-orange
                                       :background ,void-cyan-1))))
    `(term-color-white ((t (:foreground ,void-fg
-                                       :background ,void-green-pastel))))
+                                       :background ,void-grey+1))))
    '(term-default-fg-color ((t (:inherit term-color-white))))
    '(term-default-bg-color ((t (:inherit term-color-black))))
 ;;;;; undo-tree
@@ -1158,10 +1158,10 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(web-mode-warning-face ((t (:inherit font-lock-warning-face))))
    `(web-mode-whitespaces-face ((t (:background ,void-pink))))
 ;;;;; whitespace-mode
-   `(whitespace-space ((t (:background ,void-green-pastel-1 :foreground ,void-green-pastel-1))))
-   `(whitespace-hspace ((t (:background ,void-green-pastel-1 :foreground ,void-green-pastel-1))))
+   `(whitespace-space ((t (:background ,void-grey :foreground ,void-grey))))
+   `(whitespace-hspace ((t (:background ,void-grey :foreground ,void-grey))))
    `(whitespace-tab ((t (:background ,void-red-pastel+3))))
-   `(whitespace-newline ((t (:foreground ,void-green-pastel-1))))
+   `(whitespace-newline ((t (:foreground ,void-grey))))
    `(whitespace-trailing ((t (:background ,void-pink))))
    `(whitespace-line ((t (:background ,void-bg :foreground ,void-pink+1))))
    `(whitespace-space-before-tab ((t (:background ,void-fg :foreground ,void-fg))))
