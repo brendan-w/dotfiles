@@ -1,8 +1,4 @@
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
 ;; look in ~/.emacs.d/lisp for custom lisp modules
@@ -79,14 +75,12 @@
     (setq helm-ff-newfile-prompt-p nil) ;; don't ask for confirmation when creating new files
 )
 
-(use-package expand-region
-    :ensure t)
-
-(use-package multiple-cursors
-    :ensure t)
-
-(use-package move-text
-    :ensure t)
+(use-package move-text :ensure t)
+(use-package expand-region :ensure t)
+(use-package multiple-cursors :ensure t)
+(use-package markdown-mode :ensure t)
+(use-package fish-mode :ensure t)
+(use-package rainbow-mode :ensure t)
 
 ;; auto completion
 (use-package company
@@ -143,15 +137,6 @@
     :config
     (global-undo-tree-mode 1)
 )
-
-(use-package markdown-mode
-    :ensure t
-)
-
-(use-package fish-mode
-    :ensure t
-)
-
 
 ;; ---------------- hooks ----------------
 
