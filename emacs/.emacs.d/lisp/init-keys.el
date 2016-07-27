@@ -2,13 +2,23 @@
 (defun eval-python-in-place ()
   "runs the current region as a python command, and inserts the result"
   (interactive)
+  (if (region-active-p)
+      (setq input (buffer-substring (mark) (point)))
+      (setq input (thing-at-point 'line t))
+  )
   (setq code (format
 "from random import *
 from math import *
 print((%s), end=\"\")
-" (buffer-substring (mark) (point))))
+" input))
   (setq result (shell-command-to-string (format "python3 -c '%s'" code)))
-  (call-interactively 'delete-region)
+  (if (region-active-p)
+      (call-interactively 'delete-region)
+      (progn
+        (kill-whole-line)
+        (open-line 1)
+      )
+  )
   (insert result)
 )
 
