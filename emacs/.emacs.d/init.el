@@ -115,6 +115,11 @@
             ((eq major-mode 'dired-mode) "emacs")
             (t "user"))))
     )
+    ;; update the tabbar's modified status on changes
+    (add-hook 'after-change-functions (lambda (beginning end length)
+        (tabbar-set-template tabbar-current-tabset nil)))
+    (add-hook 'after-save-hook (lambda ()
+        (tabbar-set-template tabbar-current-tabset nil)))
 )
 
 (use-package popwin
