@@ -1,25 +1,29 @@
 
-(defun eval-python-in-place ()
-  "runs the current region as a python command, and inserts the result"
-  (interactive)
-  (if (region-active-p)
-      (setq input (buffer-substring (mark) (point)))
-      (setq input (thing-at-point 'line t))
-  )
+(defun eval-python (expression)
   (setq code (format
 "from random import *
 from math import *
 print((%s), end=\"\")
-" input))
-  (setq result (shell-command-to-string (format "python3 -c '%s'" code)))
+" expression))
+  (shell-command-to-string (format "python3 -c '%s'" code))
+)
+
+(defun eval-python-in-place ()
+  "runs the current region as a python command, and inserts the result"
+  (interactive)
   (if (region-active-p)
-      (call-interactively 'delete-region)
       (progn
+        (setq result (eval-python (buffer-substring (mark) (point))))
+        (call-interactively 'delete-region)
+        (insert result)
+      )
+      (progn
+        (setq result (eval-python (thing-at-point 'line t)))
         (kill-whole-line)
         (open-line 1)
+        (insert result)
       )
   )
-  (insert result)
 )
 
 (defun revert-buffer-no-confirm ()
