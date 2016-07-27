@@ -54,6 +54,9 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; custom mode line
+(setq-default mode-line-format '("%e   %b   (%l,%c)   %m"))
+
 ;; theme
 (require 'zweilight-theme)
 (load-theme 'zweilight t)
@@ -133,12 +136,6 @@
     :config
     (clean-aindent-mode 1)
     (set 'clean-aindent-is-simple-indent t)
-)
-
-(use-package window-numbering
-    :ensure t
-    :config
-    (window-numbering-mode 1)
 )
 
 (use-package undo-tree

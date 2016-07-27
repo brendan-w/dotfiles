@@ -142,7 +142,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(minibuffer-prompt ((t (:foreground ,zweilight-cyan))))
    `(mode-line
      ((,class (:foreground ,zweilight-bg
-               :background ,zweilight-blue))
+               :background ,zweilight-blue
+               :weight bold))
       (t :inverse-video t)))
    `(mode-line-buffer-id ((t (:foreground ,zweilight-bg :weight bold))))
    `(mode-line-inactive
