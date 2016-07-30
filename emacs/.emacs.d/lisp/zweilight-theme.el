@@ -52,6 +52,7 @@
     ("zweilight-bg+1"          . "#1f1d2e")
     ("zweilight-bg+2"          . "#211f30")
     ("zweilight-bg+3"          . "#252634")
+    ("zweilight-bg+4"          . "#303040")
     ("zweilight-fg"            . "#A2A2C6")
     ("zweilight-fg-1"          . "#5C4E85")
     ("zweilight-red-pastel"    . "#8C5353")
@@ -148,7 +149,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mode-line-inactive
      ((t (:foreground ,zweilight-fg-1
           :background ,zweilight-bg+3))))
-   `(region ((,class (:background ,zweilight-bg+3))
+   `(region ((,class (:background ,zweilight-bg+4 :foreground ,zweilight-fg))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,zweilight-fg))))
    `(trailing-whitespace ((t (:background ,zweilight-pink))))
@@ -585,7 +586,7 @@ Also bind `class' to ((class color) (min-colors 89))."
           :weight bold
           ;; :box (:line-width -1 :style released-button)
           :box nil))))
-   `(helm-selection ((t (:background ,zweilight-bg+3 :underline nil))))
+   `(helm-selection ((t (:background ,zweilight-bg+4))))
    `(helm-selection-line ((t (:background ,zweilight-grey))))
    `(helm-visible-mark ((t (:foreground ,zweilight-bg :background ,zweilight-yellow))))
    `(helm-candidate-number ((t (:foreground nil :background nil))))
