@@ -2,7 +2,7 @@ function bugzap --description "deletes temporary files from other OS'"
 
 	# set these
 	set directories ".fseventsd" ".Spotlight-V100" ".Trash-1000" ".Trashes" ".TemporaryItems" ".Sugar-Metadata" "__MACOSX"
-	set files "._.Trashes" ".DS_Store" "Thumbs.db" "._.TemporaryItems" ".apdisk" "._.apdisk"
+	set files "._.Trashes" ".DS_Store" "._.DS_Store" "Thumbs.db" "._.TemporaryItems" ".apdisk" "._.apdisk"
 
 
 	# test for the "zap" command to remove the files
