@@ -39,6 +39,7 @@ alias gco="git checkout"
 
 # --------------- env ---------------
 
+set -gx LS_COLORS (dircolors | head -n 1 | sed "s/LS_COLORS='//g; s/';//g")
 set -gx VIRTUALFISH_HOME ~/.virtualenvs
 set -gx GCC_COLORS "always"
 set -gx PAGER "less -r"
