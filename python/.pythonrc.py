@@ -1,4 +1,6 @@
 
+import os
+
 # record the current state of the interpreter,
 # so we can clean up after ourselves later
 orig_globals = set(globals())
@@ -15,7 +17,6 @@ readline.parse_and_bind("tab: complete")
 ########## Command History ##########
 
 import atexit
-import os
 
 history_file = os.path.join(os.environ["HOME"], ".python_history")
 
@@ -52,3 +53,6 @@ from sys import version_info
 if version_info.major >= 3:
     exec("print = pprint") # string prevents syntax error in python 2
 del version_info
+
+def cls():
+    os.system("clear")
