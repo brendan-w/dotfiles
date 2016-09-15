@@ -16,9 +16,10 @@
 (modify-all-frames-parameters (list (cons 'cursor-type 'bar)))
 ;(blink-cursor-mode 0) ;; DON'T blink the cursor
 (setq-default scroll-conservatively 1) ;; don't scroll by whole pages
-(setq-default scroll-margin 10) ;; keep the cursor N lines from the ends of the window
+(setq-default scroll-margin 3) ;; keep the cursor N lines from the ends of the window
 (setq ring-bell-function 'ignore) ;; be quite
 (setq vc-follow-symlinks nil) ;; don't ask, always access symlinks as if they're the real file
+(setq hexl-bits 8) ;; group into bytes, not words
 (tool-bar-mode 0) ;; hide the gui toolbar
 (menu-bar-mode 0) ;; hide the menu bar
 (line-number-mode 1) ;; show the line and column number in the modeline
