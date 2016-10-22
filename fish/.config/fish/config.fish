@@ -55,9 +55,9 @@ if test -f ~/.pythonrc.py
 end
 
 # editor
-if command -s emacs > /dev/null 2>&1
+if which emacs > /dev/null 2>&1
     set -gx EDITOR "emacs --no-window-system --no-desktop"
-else if command -s vim > /dev/null 2>&1
+else if which vim > /dev/null 2>&1
     set -gx EDITOR "vim"
 else
     set -gx EDITOR "nano"
@@ -71,7 +71,7 @@ set -g theme_display_user no
 
 # virtual-fish
 # test for python first
-if command -s python > /dev/null 2>&1
+if which python > /dev/null 2>&1
     if python -c 'import virtualfish' > /dev/null 2>&1
         eval (python -m virtualfish compat_aliases)
     else
@@ -86,3 +86,8 @@ alias e="eval $EDITOR"
 alias notes="e ~/notes.txt"
 alias projects="e ~/projects.txt"
 alias contacts="e ~/contacts.xml"
+
+set -l site_fish ~/.site.fish
+if test -f $site_fish
+    . ./$site_fish
+end
