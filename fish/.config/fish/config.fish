@@ -2,7 +2,7 @@
 set fish_greeting ""
 
 # print my reminders
-if command -s remind > /dev/null 2>&1 ; and test -f ~/.reminders
+if which remind > /dev/null 2>&1 ; and test -f ~/.reminders
     remind ~/.reminders | sed '/^\s*$/d' | tail -n+2
 end
 
