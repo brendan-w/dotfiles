@@ -89,5 +89,5 @@ alias contacts="e ~/contacts.xml"
 
 set -l site_fish ~/.site.fish
 if test -f $site_fish
-    . ./$site_fish
+    . $site_fish
 end
