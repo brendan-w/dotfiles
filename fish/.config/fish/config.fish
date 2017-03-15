@@ -10,7 +10,7 @@ end
 alias !!=" eval $history[1]" # leading space prevents command from showing up in history
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%d-%m-%Y %H:%M   "'
 alias grep='grep -n --color=tty -d skip'
-alias pgrep='pgrep -a'
+alias pgrep='pgrep -fa'
 alias ag='ag --color-path "38;5;27" --color-line-number "1;38;5;127" --color-match "1;91"'
 alias df='df --human-readable'
 alias du='du --human-readable --total'
