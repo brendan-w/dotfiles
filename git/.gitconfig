@@ -3,7 +3,7 @@
     name = Brendan Whitfield
 
 [alias]
-    wipe = !git reset --hard && git clean -fd
+    wipe = !git reset --hard && git clean -ffd
     unstage = reset --
     rekt = push origin master --force
 
