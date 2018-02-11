@@ -6,9 +6,59 @@
 [keybindings]
     # stop stealing my F keys
     full_screen = <Ctrl><Shift>F11
-    help = <Ctrl><Shift>F1
-    split_horiz = <Ctrl><Alt>Down
-    split_vert = <Ctrl><Alt>Right
+    zoom_in = <Ctrl>plus
+    zoom_out = <Ctrl>minus
+    zoom_normal = <Ctrl>0
+    copy = <Ctrl><Shift>C
+    paste = <Ctrl><Shift>V
+    search = <Ctrl><Shift>F
+
+    # I don't care about the rest of these features, and would prefer the terminal
+    # to not steal any odd keystrokes away from tools like text editors.
+    new_tab = None
+    cycle_next = None
+    cycle_prev = None
+    go_prev = None
+    go_up = None
+    go_down = None
+    go_left = None
+    go_right = None
+    rotate_cw = None
+    rotate_ccw = None
+    split_horiz = None
+    split_vert = None
+    close_term = None
+    toggle_scrollbar = None
+    close_window = None
+    resize_up = None
+    resize_down = None
+    resize_left = None
+    resize_right = None
+    move_tab_right = None
+    move_tab_left = None
+    toggle_zoom = None
+    scaled_zoom = None
+    next_tab = None
+    prev_tab = None
+    switch_to_tab_1 = None
+    switch_to_tab_2 = None
+    switch_to_tab_3 = None
+    switch_to_tab_4 = None
+    switch_to_tab_5 = None
+    switch_to_tab_6 = None
+    switch_to_tab_7 = None
+    switch_to_tab_8 = None
+    switch_to_tab_9 = None
+    switch_to_tab_10 = None
+    reset = None
+    reset_clear = None
+    hide_window = None
+    group_all = None
+    ungroup_all = None
+    group_tab = None
+    ungroup_tab = None
+    new_window = None
+    new_terminator = None
 
 [profiles]
 [[default]]
