@@ -13,8 +13,21 @@
     paste = <Ctrl><Shift>V
     search = <Ctrl><Shift>F
 
+    #
+    # These trigger custom keycodes that my editor (micro) is configured to understand
+    # See .config/terminator/plugins/keycodes.py for the generated escape sequence
+    #
+    custom_ctrl_backspace = <Control>BackSpace
+    custom_ctrl_bracket_left = <Control>bracketleft
+    custom_ctrl_bracket_right = <Control>bracketright
+
+    # Wierdly, Terminator transmits Ctrl-Shift-Left and Ctrl-Shift-Right, but not up and down
+    custom_ctrl_shift_up = <Control><Shift>Up
+    custom_ctrl_shift_down = <Control><Shift>Down
+
     # I don't care about the rest of these features, and would prefer the terminal
-    # to not steal any odd keystrokes away from tools like text editors.
+    # to not steal any odd keystrokes away from tools like text editors. I have a tiling
+    # window manager to handle all of this multi-terminal business.
     new_tab = None
     cycle_next = None
     cycle_prev = None

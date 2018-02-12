@@ -1,0 +1,21 @@
+{
+    "AltLeft": "StartOfLine",
+    "AltRight": "EndOfLine",
+
+    "CtrlRight": "WordRight",
+    "CtrlLeft": "WordLeft",
+    "CtrlUp": "ParagraphPrevious",
+    "CtrlDown": "ParagraphNext",
+
+    "CtrlShiftRight": "SelectWordRight",
+    "CtrlShiftLeft": "SelectWordLeft",
+    "CtrlShiftUp": "MoveLinesUp",
+    "CtrlShiftDown": "MoveLinesDown",
+
+    "\u001bbracketleft": "OutdentSelection,OutdentLine",
+    "\u001bbracketright": "IndentSelection,InsertTab",
+
+    "CtrlL": "SelectLine",
+    "CtrlH": "ToggleHelp",
+    "CtrlG": "JumpLine",
+}
