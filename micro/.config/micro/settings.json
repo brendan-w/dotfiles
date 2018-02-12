@@ -41,5 +41,9 @@
     "tabsize": 4,
     "tabstospaces": true,
     "termtitle": false,
-    "useprimary": true
+    "useprimary": true,
+
+    "*.json": {
+        "commenttype": "// %s"
+    },
 }
