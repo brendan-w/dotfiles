@@ -55,7 +55,9 @@ if test -f ~/.pythonrc.py
 end
 
 # editor
-if which emacs > /dev/null 2>&1
+if which micro > /dev/null 2>&1
+    set -gx EDITOR "micro"
+else if which emacs > /dev/null 2>&1
     set -gx EDITOR "emacs --no-window-system --no-desktop"
 else if which vim > /dev/null 2>&1
     set -gx EDITOR "vim"
