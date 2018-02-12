@@ -15,7 +15,7 @@ alias ag='ag --color-path "38;5;27" --color-line-number "1;38;5;127" --color-mat
 alias df='df --human-readable'
 alias du='du --human-readable --total'
 alias hexdump='hexdump -C'
-alias tree='tree -C -F -I .git'
+alias tree='tree -C -F -I .git -I node_modules'
 alias xx='atool -x'
 alias xl='atool -l'
 alias rm='rm -r' # probably a bad idea, but we'll see
@@ -31,7 +31,7 @@ alias gd="git diff"
 alias gr="git remote -v"
 alias gds="git diff --stat --find-renames"
 alias gb="git branch -a"
-alias gt="git log --graph --all --pretty=format:'%C(bold dim cyan)%h%C(bold red)%d %C(dim white)%s%n'"
+alias gt="git log --graph --all --author-date-order --pretty=format:'%C(bold dim cyan)%h%C(bold red)%d %C(dim white)%s%n'"
 alias gap="git add -p"
 alias gaa="git add --all ; git status"
 alias gco="git checkout"
