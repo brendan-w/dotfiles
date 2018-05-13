@@ -5,7 +5,9 @@
 [alias]
     wipe = !git reset --hard && git clean -ffd
     unstage = reset --
-    rekt = push origin master --force
+    ls = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
+    ll = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]%C(reset)' --decorate --stat --find-renames
+    tree = log --graph --all --author-date-order --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
 
 [Color]
     [color "branch"]
@@ -21,3 +23,5 @@
 
 [status]
     showUntrackedFiles = all
+[core]
+    autocrlf = input
