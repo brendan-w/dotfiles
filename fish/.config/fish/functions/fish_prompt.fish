@@ -244,6 +244,13 @@ function __bobthefish_prompt_status -d 'Display symbols for a non zero exit stat
   end
 end
 
+function  __bobthefish_prompt_ssh -d 'Display a symbol indicating whether the user is in an SSH session'
+  if [ -n "$SSH_CLIENT" ]
+    __bobthefish_start_segment $__bobthefish_slate_blue $__git_clean_fg
+    echo -n -s (hostname) ' '
+  end
+end
+
 function __bobthefish_prompt_user -d 'Display actual user if different from $default_user'
   if [ "$theme_display_user" = 'yes' ]
     if [ "$USER" != "$default_user" -o -n "$SSH_CLIENT" ]
@@ -304,9 +311,6 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   if [ "$dirty" -o "$staged" ]
     set -l flag_bg $__git_staged_bg
     set -l flag_fg $__git_staged_fg
-  else if [ "$stashed" ]
-    set flag_bg $__bobthefish_lt_orange
-    set flag_fg $__bobthefish_dk_orange
   end
 
   __bobthefish_path_segment $argv[1]
@@ -379,6 +383,7 @@ end
 
 function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
   __bobthefish_prompt_status
+  __bobthefish_prompt_ssh
   __bobthefish_prompt_user
   __bobthefish_prompt_rubies
   __bobthefish_prompt_virtualfish
