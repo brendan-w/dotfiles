@@ -5,6 +5,7 @@
 [alias]
     wipe = !git reset --hard && git clean -ffd
     unstage = reset --
+    force-pull = !git fetch origin $(git rev-parse --abbrev-ref HEAD) && git reset --hard FETCH_HEAD
     ls = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
     ll = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]%C(reset)' --decorate --stat --find-renames
     tree = log --graph --all --author-date-order --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
