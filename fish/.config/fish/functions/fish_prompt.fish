@@ -243,7 +243,7 @@ end
 
 function  __bobthefish_prompt_ssh -d 'Display a symbol indicating whether the user is in an SSH session'
   if [ -n "$SSH_CLIENT" ]
-    __bobthefish_start_segment $__bobthefish_slate_blue $__git_clean_fg
+    __bobthefish_start_segment $__bobthefish_dk_grey $__bobthefish_lt_orange --bold
     echo -n -s (hostname) ' '
   end
 end
