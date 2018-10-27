@@ -1,7 +1,6 @@
 [user]
     email = brendanw@windworksdesign.com
     name = Brendan Whitfield
-
 [alias]
     wipe = !git reset --hard && git clean -ffd
     unstage = reset --
@@ -9,7 +8,6 @@
     ls = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
     ll = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]%C(reset)' --decorate --stat --find-renames
     tree = log --graph --all --author-date-order --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
-
 [Color]
     [color "branch"]
         current = green
@@ -21,8 +19,12 @@
         untracked = red
 [credential]
     helper = cache --timeout=3600
-
 [status]
     showUntrackedFiles = all
 [core]
     autocrlf = input
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
