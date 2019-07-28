@@ -8,7 +8,6 @@ cd ~
 git clone <this repo>
 cd ~/dotfiles
 
-stow conky
 stow fish
 stow terminator
 ...
