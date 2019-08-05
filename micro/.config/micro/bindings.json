@@ -18,10 +18,11 @@
     "\u001bbracketleft": "OutdentSelection,OutdentLine",
     "\u001bbracketright": "IndentSelection,InsertTab",
 
+    "CtrlP": "FileSearch.FileSearchOpen",
     "CtrlH": "ToggleHelp",
     "CtrlG": "JumpLine",
     "CtrlD": "SpawnMultiCursor",
     "CtrlShiftD": "DuplicateLine",
 
-    "Esc": "Escape,RemoveAllMultiCursors",
+    "Esc": "Escape,RemoveAllMultiCursors,FileSearch.FileSearchClose",
 }

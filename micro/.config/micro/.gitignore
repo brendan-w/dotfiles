@@ -5,3 +5,4 @@ plugins/*
 # except my own
 !plugins/SelectNextLine
 !plugins/EvalAsPython
+!plugins/FileSearch
