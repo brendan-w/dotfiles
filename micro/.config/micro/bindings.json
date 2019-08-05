@@ -7,20 +7,21 @@
     "CtrlUp": "ParagraphPrevious",
     "CtrlDown": "ParagraphNext",
 
-    "\u001b[5;5~": "PreviousTab",
-    "\u001b[6;5~": "NextTab",
-
     "CtrlShiftRight": "SelectWordRight",
     "CtrlShiftLeft": "SelectWordLeft",
     "CtrlShiftUp": "MoveLinesUp",
     "CtrlShiftDown": "MoveLinesDown",
 
+    "\u001b[5;5~": "PreviousTab",
+    "\u001b[6;5~": "NextTab",
+
     "\u001bbracketleft": "OutdentSelection,OutdentLine",
     "\u001bbracketright": "IndentSelection,InsertTab",
 
-    "CtrlL": "SelectLine",
     "CtrlH": "ToggleHelp",
     "CtrlG": "JumpLine",
+    "CtrlD": "SpawnMultiCursor",
+    "CtrlShiftD": "DuplicateLine",
 
     "Esc": "Escape,RemoveAllMultiCursors",
 }

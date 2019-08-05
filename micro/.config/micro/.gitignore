@@ -1,2 +1,6 @@
 buffers/
-plugins/
+
+# ignore all plugins
+plugins/*
+# except my own
+!plugins/SelectNextLine
