@@ -4,3 +4,4 @@ buffers/
 plugins/*
 # except my own
 !plugins/SelectNextLine
+!plugins/EvalAsPython
