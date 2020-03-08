@@ -37,7 +37,7 @@ alias gap="git add -p"
 alias ga="git add --all ; git status"
 alias gca="git commit --amend --no-edit"
 alias gco="git checkout"
-
+alias gc="git commit"
 
 # --------------- env ---------------
 
