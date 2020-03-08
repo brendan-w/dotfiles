@@ -59,10 +59,10 @@ end
 # editor
 if which micro > /dev/null 2>&1
     set -gx EDITOR "micro"
-else if which emacs > /dev/null 2>&1
-    set -gx EDITOR "emacs --no-window-system --no-desktop"
 else if which vim > /dev/null 2>&1
     set -gx EDITOR "vim"
+else if which emacs > /dev/null 2>&1
+    set -gx EDITOR "emacs --no-window-system --no-desktop"
 else
     set -gx EDITOR "nano"
 end
