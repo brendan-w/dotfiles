@@ -34,7 +34,8 @@ alias gds="git diff --stat --find-renames"
 alias gb="git branch"
 alias gt="git tree"
 alias gap="git add -p"
-alias gaa="git add --all ; git status"
+alias ga="git add --all ; git status"
+alias gca="git commit --amend --no-edit"
 alias gco="git checkout"
 
 
