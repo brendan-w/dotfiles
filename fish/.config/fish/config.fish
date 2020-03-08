@@ -25,19 +25,19 @@ alias p='popd' # pop cwd off the stack
 alias wtf-journal='journalctl -xe --priority err --boot -0'
 
 # --------------- git ---------------
-alias gl="git ls"
-alias gll="git ll"
-alias gs="git status"
-alias gd="git diff"
-alias gr="git remote -v"
-alias gds="git diff --stat --find-renames"
-alias gb="git branch"
-alias gt="git tree"
-alias gap="git add -p"
 alias ga="git add --all ; git status"
+alias gap="git add -p"
+alias gb="git branch"
+alias gc="git commit"
 alias gca="git commit --amend --no-edit"
 alias gco="git checkout"
-alias gc="git commit"
+alias gd="git diff"
+alias gds="git diff --stat --find-renames"
+alias gl="git ls"
+alias gll="git ll"
+alias gr="git remote -v"
+alias gs="git status"
+alias gt="git tree"
 
 # --------------- env ---------------
 
