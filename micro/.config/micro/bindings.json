@@ -18,11 +18,12 @@
     "\u001bbracketleft": "OutdentSelection,OutdentLine",
     "\u001bbracketright": "IndentSelection,InsertTab",
 
-    "CtrlP": "FileSearch.FileSearchOpen",
+    "CtrlP": "fzf.fzf",
     "CtrlH": "ToggleHelp",
     "CtrlG": "JumpLine",
     "CtrlD": "SpawnMultiCursor",
     "CtrlShiftD": "DuplicateLine",
 
-    "Esc": "Escape,RemoveAllMultiCursors,FileSearch.FileSearchClose",
+    "Esc": "Escape,RemoveAllMultiCursors",
+    "CtrlShiftQ": "QuitAll",
 }
