@@ -1,16 +1,10 @@
 
 set fish_greeting ""
 
-# print my reminders
-if which remind > /dev/null 2>&1 ; and test -f ~/.reminders
-    remind ~/.reminders | sed '/^\s*$/d' | tail -n+2
-end
-
 # --------------- general ---------------
 alias !!=" eval $history[1]" # leading space prevents command from showing up in history
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%d-%m-%Y %H:%M   "'
 alias grep='grep -n --color=tty -d skip'
-alias pgrep='pgrep -fa'
 alias ag='ag --color-path "38;5;27" --color-line-number "1;38;5;127" --color-match "1;91"'
 alias df='df --human-readable'
 alias du='du --human-readable --total'
@@ -20,9 +14,8 @@ alias xx='atool -x'
 alias xl='atool -l'
 alias rm='rm -r' # probably a bad idea, but we'll see
 alias cd='cds'
-alias s='pushd .' # save cwd onto the stack
-alias p='popd' # pop cwd off the stack
 alias wtf-journal='journalctl -xe --priority err --boot -0'
+alias backup-home='rsync -av --delete --delete-excluded --exclude .cache --exclude .local/share/Trash/ ~/'
 
 # --------------- git ---------------
 alias ga="git add --all ; git status"
