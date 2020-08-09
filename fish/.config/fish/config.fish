@@ -70,9 +70,7 @@ set -g theme_display_user no
 # virtual-fish
 # test for python first
 if which python > /dev/null 2>&1
-    if python -c 'import virtualfish' > /dev/null 2>&1
-        eval (python -m virtualfish compat_aliases)
-    else
+    if ! python -c 'import virtualfish' > /dev/null 2>&1
         echo "Virtualfish not found"
         echo "Install using 'pip install --user virtualfish'"
     end
