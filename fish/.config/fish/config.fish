@@ -12,10 +12,13 @@ alias hexdump='hexdump -C'
 alias tree='tree -C -F -I .git -I node_modules'
 alias xx='atool -x'
 alias xl='atool -l'
+alias xp='apack'
 alias rm='rm -r' # probably a bad idea, but we'll see
 alias cd='cds'
 alias wtf-journal='journalctl -xe --priority err --boot -0'
 alias backup-home='rsync -av --delete --delete-excluded --exclude .cache --exclude .local/share/Trash/ ~/'
+alias killl='kill -9'
+alias killll='sudo kill -9'
 
 # --------------- git ---------------
 alias ga="git add --all ; git status"
