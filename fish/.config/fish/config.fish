@@ -19,6 +19,7 @@ alias wtf-journal='journalctl -xe --priority err --boot -0'
 alias backup-home='rsync -av --delete --delete-excluded --exclude .cache --exclude .local/share/Trash/ ~/'
 alias killl='kill -9'
 alias killll='sudo kill -9'
+alias rm-exif='exiftool -overwrite_original -all='
 
 # --------------- git ---------------
 alias ga="git add --all ; git status"
