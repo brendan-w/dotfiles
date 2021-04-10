@@ -1,0 +1,10 @@
+build --cxxopt='-std=c++20
+build --cxxopt='-Wall'
+build --cxxopt='-Wextra'
+build --cxxopt='-pedantic'
+build --cxxopt='-Werror'
+build --copt=-fdiagnostics-color=always
+
+run --copt=-fdiagnostics-color=always
+
+test --test_output=all

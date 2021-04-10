@@ -1,0 +1,15 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
+
+new_git_repository(
+    name = "gsl",
+    remote = "https://github.com/microsoft/GSL",
+    commit = "0f6dbc9e2915ef5c16830f3fa3565738de2a9230",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+cc_library(
+    name = "gsl",
+    hdrs = glob(["include/gsl/*"]),
+    strip_include_prefix = "include/",
+)
+"""
+)
