@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "gsl/gsl_util"
+#include "gsl/gsl"
 
 int main(int argc, char* argv[])
 {
