@@ -86,16 +86,16 @@ set __git_staged_bg 000
 # end
 
 function __bobthefish_git_branch -d 'Get the current git branch (or commitish)'
-  set -l ref (command git symbolic-ref HEAD ^/dev/null)
+  set -l ref (command git symbolic-ref HEAD 2>/dev/null)
   if [ $status -gt 0 ]
-    set -l branch (command git show-ref --head -s --abbrev | head -n1 ^/dev/null)
+    set -l branch (command git show-ref --head -s --abbrev | head -n1 2>/dev/null)
     set ref "$__bobthefish_detached_glyph $branch"
   end
   echo $ref | sed  "s#refs/heads/#$__bobthefish_branch_glyph #"
 end
 
 function __bobthefish_hg_branch -d 'Get the current hg branch'
-  set -l branch (command hg branch ^/dev/null)
+  set -l branch (command hg branch 2>/dev/null)
   set -l book " @ "(command hg book | grep \* | cut -d\  -f3)
   echo "$__bobthefish_branch_glyph $branch$book"
 end
@@ -106,7 +106,7 @@ end
 
 function __bobthefish_git_project_dir -d 'Print the current git project base directory'
   [ "$theme_display_git" = 'no' ]; and return
-  command git rev-parse --show-toplevel ^/dev/null
+  command git rev-parse --show-toplevel 2>/dev/null
 end
 
 function __bobthefish_hg_project_dir -d 'Print the current hg project base directory'
@@ -114,7 +114,7 @@ function __bobthefish_hg_project_dir -d 'Print the current hg project base direc
   set d (pwd)
   while not [ $d = / ]
     if [ -e $d/.hg ]
-      command hg root --cwd "$d" ^/dev/null
+      command hg root --cwd "$d" 2>/dev/null
       return
     end
     set d (dirname $d)
@@ -295,7 +295,7 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   set -l dirty   (command git diff --no-ext-diff --quiet --exit-code; or echo -n '*')
   set -l staged  (command git diff --cached --no-ext-diff --quiet --exit-code; or echo -n '~')
   set -l stashed (command git rev-parse --verify --quiet refs/stash >/dev/null; and echo -n '$')
-  set -l ahead   (command git rev-list --left-right '@{upstream}...HEAD' ^/dev/null | awk '/>/ {a += 1} /</ {b += 1} {if (a > 0) nextfile} END {if (a > 0 && b > 0) print "±"; else if (a > 0) print "+"; else if (b > 0) print "-"}')
+  set -l ahead   (command git rev-list --left-right '@{upstream}...HEAD' 2>/dev/null | awk '/>/ {a += 1} /</ {b += 1} {if (a > 0) nextfile} END {if (a > 0 && b > 0) print "±"; else if (a > 0) print "+"; else if (b > 0) print "-"}')
 
   set -l new (command git ls-files --other --exclude-standard);
   [ "$new" ]; and set new '…'
