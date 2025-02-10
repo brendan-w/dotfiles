@@ -1,5 +1,0 @@
-@-moz-document url-prefix("https://github.com") {
-  /* hide the signup buttons */
-  .site-header-actions .btn-primary { display:none !important; }
-  .create-account-callout { display:none !important; }
-}
