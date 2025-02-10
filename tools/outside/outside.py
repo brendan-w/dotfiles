@@ -6,12 +6,11 @@ import requests
 import argparse
 import json
 import datetime
-from enum import StrEnum
 import astral
 import astral.sun
 import types
 
-class Color(StrEnum):
+class Color:
     BLACK = '\033[30m'
     RED = '\033[31m'
     GREEN = '\033[32m'
