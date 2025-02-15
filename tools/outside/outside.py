@@ -52,38 +52,145 @@ class SunriseColors:
         # The first element MUST be a color string. Lambda are used instead of
         # lookups at now() because this passively handles lookups for tomorrow.
         self.zones = [
-            "\033[48;5;17m",  # dark blue
+            "17",  # dark blue
             lambda time: astral.sun.dawn(observer, time.date(), tzinfo=time.tzinfo, depression=astral.Depression.ASTRONOMICAL),
-            "\033[48;5;19m",  # med blue
+            "19",  # med blue
             lambda time: astral.sun.dawn(observer, time.date(), tzinfo=time.tzinfo, depression=astral.Depression.CIVIL),
-            "\033[48;5;166m",  # orange
+            "166",  # orange
             lambda time: astral.sun.sunrise(observer, time.date(), tzinfo=time.tzinfo),
-            "\033[48;5;220m",  # yellow
-            lambda time: astral.sun.noon(observer, time.date(), tzinfo=time.tzinfo),
-            "\033[48;5;220m",  # yellow
+            # "220",  # yellow
+            # lambda time: astral.sun.noon(observer, time.date(), tzinfo=time.tzinfo),
+            "220",  # yellow
             lambda time: astral.sun.sunset(observer, time.date(), tzinfo=time.tzinfo),
-            "\033[48;5;166m",  # orange
+            "166",  # orange
             lambda time: astral.sun.dusk(observer, time.date(), tzinfo=time.tzinfo, depression=astral.Depression.CIVIL),
-            "\033[48;5;19m",  # med blue
+            "19",  # med blue
             lambda time: astral.sun.dusk(observer, time.date(), tzinfo=time.tzinfo, depression=astral.Depression.ASTRONOMICAL),
-            "\033[48;5;17m",  # dark blue
         ]
+        self.bar_chars = ['█','▇','▆','▅','▄','▃','▂','▁']
 
-    def color(self, time):
-        # Grab the color code just before the NEXT transition
-        current_color = None
-        for item in self.zones:
-            if isinstance(item, str):
-                current_color = item
-            elif isinstance(item, types.FunctionType):
-                if item(time) > time:
-                    break
+    def wrapping_zone_lookup(self, i):
+        return self.zones[i % len(self.zones)]
 
-        if current_color is None:
-            print("First element of the zones table was not a color string. You goofed the multi-type list, what a surprise", file=sys.stderr)
-            sys.exit(1)
+    def color(self, t_start, t_end):
+        """
+        Accepts an arbitrary time search between [t_start, t_end) and returns colors
+        representing the status of the sun in the sky.
 
-        return current_color
+        ex. search        [  ]
+        ex. search                      [  ]
+        sun sched     |--a--|-b-|--c--|----d----|
+        where | is a transition time, and a,b,c are colors between transitions
+
+        returns: (a, |, b)
+        """
+        i = 1
+        while i < len(self.zones):  # sane limit
+            # scan through sets of sun pattterns:
+            #    --p--|--n--|
+            #         c     n
+            prev_color = self.wrapping_zone_lookup(i-1)
+            curr_item = self.wrapping_zone_lookup(i)
+            next_color = self.wrapping_zone_lookup(i+1)
+            next_item = self.wrapping_zone_lookup(i+2)
+            assert isinstance(prev_color, str)
+            assert isinstance(curr_item, types.FunctionType)
+            assert isinstance(next_color, str)
+            assert isinstance(next_item, types.FunctionType)
+
+            # takes the "t_start" just for the date
+            curr_time = curr_item(t_start)
+            next_time = next_item(t_start)
+
+            # handle wrapping cleanly. next_time should always be after curr_time
+            if next_time < curr_time:
+                # re-run the sun computation for tomorrow
+                next_time = next_item(t_start + datetime.timedelta(days=1))
+
+            # search: [  ]
+            # search: [      ]
+            # sun:    --|--|
+            if (t_start <= curr_time < t_end):
+                # search: [      ]
+                # sun:    --|--|
+                if (t_start < next_time <= t_end):
+                    # Note that this is an ambiguous case where there are more than two transitions
+                    # within the search, technically yeilding 3 colors. We just retain the two largest
+                    # colors, and average the two transitions into one. Our box-draw characters can only
+                    # display a single transition with foreground and background colors.
+
+                    # eliminate the smallest of the three colors
+                    # search: [         ]
+                    # sun:    -a-|-b-|-c-
+
+                    second_next_color = self.wrapping_zone_lookup(i+3)
+                    assert isinstance(second_next_color, str)
+
+                    zones = [
+                        # (start, end, color)
+                        (t_start, curr_time, prev_color),  # a
+                        (curr_time, next_time, next_color),  # b
+                        (next_time, t_end, second_next_color)  # c
+                    ]
+
+                    # Get the index of the zone with the smallest duration
+                    smallest = 0
+                    smallest_size = zones[0][1] - zones[0][0]
+                    for i, (start, end, color) in enumerate(zones):
+                        size = end - start
+                        if size < smallest_size:
+                            smallest = i
+                            smallest_size = size
+
+                    # delete that index
+                    del zones[smallest]
+
+                    # It's possible we deleted the middle index, so we compute the average in this case
+                    # [ ]-->|<--[ ]
+                    #   a       b
+                    zone_a = zones[0]
+                    zone_b = zones[1]
+                    transition_time = zone_a[1] + ((zone_b[0] - zone_a[1]) / 2)
+
+                    return (zone_a[2], transition_time, zone_b[2])
+                else:
+                    # search: [  ]
+                    # sun:    --|--|
+                    return (prev_color, curr_time, next_color)
+
+            # The following cases report regions of a single solid color. In these cases,
+            # we report the transition as being exactly t_start, and put the color in the
+            # "next" slot. This is just a nuance of the box-char drawing below.
+
+            # search: [  ]
+            # sun:       --|--|
+            if (t_end < curr_time):
+                return (prev_color, t_start, prev_color)
+
+            # search:     [  ]
+            # sun:    --|------|
+            if (curr_time < t_start) and (next_time > t_end):
+                return (next_color, t_start, next_color)
+
+            # skip to the next sun transition
+            i += 2
+
+        assert False
+
+    def get_box_chars(self, t_start, t_end):
+        prev_color, time_of_transition, next_color = self.color(t_start, t_end)
+
+        # [0.0, 1.0)
+        normalized_transition = (time_of_transition - t_start) / (t_end - t_start)
+
+        # The box-drawing characters we have are in eights, so we need to chose the closes index from this table
+        bar_index = round(normalized_transition / (1.0 / len(self.bar_chars)))
+        char = self.bar_chars[bar_index]
+
+        prev_color = f"\033[48;5;{prev_color}m"  # background
+        next_color = f"\033[38;5;{next_color}m"  # foreground
+        return f"{prev_color}{next_color}{char}{char}{Color.RESET}"
+
 
 def get_weather(lat, lon, alt):
     # Lookup the weather.gov station and grid offsets for the given lat/lon
@@ -103,21 +210,20 @@ def get_weather(lat, lon, alt):
         t_start = datetime.datetime.fromisoformat(period["startTime"])
         t_end = datetime.datetime.fromisoformat(period["endTime"])
 
-        time = t_start
         color = Color.RESET
         if t_end < now:
             continue
-        elif t_start < now < t_end:
-            time = now
+        elif t_start <= now < t_end:
+            t_start = now
             color = Color.BRIGHT_GREEN + Color.BOLD
         elif (t_start - now).days > 0:  # only show 24 hours in the future
             break
 
-        time_str = to_12_hour(time.time())
-        sky_color = sunrise_colors.color(time)
+        time_str = to_12_hour(t_start.time())
+        sky_chars = sunrise_colors.get_box_chars(t_start, t_end)
         temp_f = period["temperature"]
         bar = '-'*int(max(0, temp_f-32))  # lol when does it go below freezing in the bay area
-        print(f"{color}  {time_str} {sky_color}  {Color.RESET}{color} |{bar} {temp_f}")
+        print(f"{color}  {time_str} {sky_chars}{color} |{bar} {temp_f}")
 
 def main():
     parser = argparse.ArgumentParser()
