@@ -1,0 +1,7 @@
+.cache
+.local/share/Trash/
+.gem
+.npm
+.rustup
+.cargo
+.zoom
