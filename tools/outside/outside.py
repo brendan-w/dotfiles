@@ -184,7 +184,7 @@ class SunriseColors:
         normalized_transition = (time_of_transition - t_start) / (t_end - t_start)
 
         # The box-drawing characters we have are in eights, so we need to chose the closes index from this table
-        bar_index = round(normalized_transition / (1.0 / len(self.bar_chars)))
+        bar_index = round(normalized_transition / (1.0 / len(self.bar_chars))) % len(self.bar_chars)
         char = self.bar_chars[bar_index]
 
         prev_color = f"\033[48;5;{prev_color}m"  # background
