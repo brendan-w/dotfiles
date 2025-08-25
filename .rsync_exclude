@@ -5,3 +5,4 @@
 .rustup
 .cargo
 .zoom
+__pycache__
